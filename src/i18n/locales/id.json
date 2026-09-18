@@ -1,0 +1,235 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "education": "Pendidikan",
+    "achievements": "Pencapaian",
+    "portfolio": "Portofolio",
+    "contact": "Kontak",
+    "menu": "Menu",
+    "close": "Tutup"
+  },
+  "hero": {
+    "line1": "Dery",
+    "line2": "Andrian",
+    "fullName": "Dery Andrian Pratama",
+    "tagline": "Merancang produk digital yang bermakna.",
+    "scroll": "Gulir",
+    "portraitAlt": "Foto melingkar Dery Andrian Pratama"
+  },
+  "motto": {
+    "eyebrow": "Prinsip Saya",
+    "text": "Aku pegang teguh kata-kataku, karena itu jalan ninja-ku."
+  },
+  "experience": {
+    "eyebrow": "Jejak Karier",
+    "title": "Pengalaman Profesional",
+    "showMore": "Selengkapnya",
+    "showLess": "Ringkas",
+    "roles": {
+      "abadJaya": {
+        "org": "PT Abad Jaya Senantiasa",
+        "role": "Asisten Manajer Proyek (Freelance)",
+        "dateRange": "Jan 2024 – Sekarang",
+        "summary": "Menjembatani klien dan engineer — mengubah kebutuhan bisnis menjadi rencana yang siap dieksekusi, hingga serah terima produk.",
+        "bullets": [
+          "Mengoordinasikan komunikasi klien ↔ engineering terkait kebutuhan, kendala, dan linimasa.",
+          "Menulis PRD dan TRD yang menerjemahkan kebutuhan bisnis menjadi tugas pengembangan.",
+          "Mendukung Lead PM untuk sistem absensi/monitoring sekolah, platform survei Bank Indonesia, dasbor operasional peternakan ayam, dan aplikasi POS ritel multi-tenant.",
+          "Menjalankan serah terima produk: onboarding, demo, dan sosialisasi ke pengguna akhir."
+        ]
+      },
+      "bitTech": {
+        "org": "CV Bit Technology",
+        "role": "Manajer Proyek & Desainer Sistem",
+        "dateRange": "Jan 2020 – Des 2023",
+        "summary": "Memimpin pengembangan produk secara menyeluruh — dari konsep dan wireframe hingga deployment — lintas blockchain, mobile, web, dan data.",
+        "bullets": [
+          "Mengelola pengembangan produk dari konsep dan wireframe hingga deployment.",
+          "Merancang arsitektur sistem INDOCHAIN, platform pelacakan rantai pasok vaksin berbasis blockchain.",
+          "Merancang UX dan alur pengguna untuk aplikasi validasi QR mobile dan dasbor analitik web (diakui di hackathon).",
+          "Membangun landing page responsif dengan HTML, CSS, JavaScript, dan Bootstrap.",
+          "Menyusun laporan monitoring media sosial/berita dengan R (Instagram, TikTok, YouTube).",
+          "Melakukan analisis prediktif pertumbuhan pengikut serta evaluasi engagement, jadwal posting, dan hashtag.",
+          "Menganalisis dataset survei dengan 800+ responden.",
+          "Menerapkan text mining dan analisis jaringan — jaringan bigram dan word cloud — pada wacana berita."
+        ]
+      },
+      "kedata": {
+        "org": "PT Kedata Indonesia",
+        "role": "Magang Data Analyst & Web Developer",
+        "dateRange": "Jan 2020 – Des 2021",
+        "summary": "Memadukan analisis data dengan pengembangan web praktis — dari laporan riset industri hingga website production.",
+        "bullets": [
+          "Melakukan analisis multivariabel dengan R untuk laporan industri kedai kopi dan hotel bintang 4–5.",
+          "Melakukan riset kompetitif dan sentimen melalui Instagram, Google Maps, GoFood, dan Hotels.com.",
+          "Memvisualisasikan engagement, jam ramai, dan demografi untuk pemangku kepentingan.",
+          "Membangun website perusahaan Politisimeter dari nol dengan HTML, CSS, JavaScript, dan Bootstrap.",
+          "Membangun dan mengoptimalkan situs WordPress untuk klien Politisimeter (performa + SEO)."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Karya Pilihan",
+    "title": "Proyek Pilihan",
+    "viewSource": "Lihat source",
+    "items": {
+      "jagadAgro": {
+        "name": "Jagad Agro Wonoboyo",
+        "role": "Team Lead & Full-Stack Developer",
+        "duration": "Agu–Okt 2024",
+        "description": "Memimpin tim 3 orang bersama PPK Ormawa BEM FMIPA UNY membangun platform manajemen pertanian berbasis web untuk petani di Wonoboyo, Klaten — dari PRD dan wireframe Figma hingga demo langsung dan onboarding. Dasbor admin berjalan di atas MERN stack.",
+        "features": [
+          "Modul pelaporan serta demografi petani & kelompok",
+          "Manajemen inventaris dan transaksi penjualan",
+          "Pemetaan spasial lahan pertanian",
+          "CMS bawaan untuk admin lapangan"
+        ],
+        "imageAlt": "Pratinjau sementara untuk platform Jagad Agro Wonoboyo"
+      },
+      "mylifeco": {
+        "name": "MyLifeCo — Healthcare Companion App",
+        "role": "Desainer Produk & Team Lead",
+        "duration": "2024",
+        "description": "Memimpin tim 3 orang meraih juara 2 dari 1.100+ tim di BPJS Healthkathon 2024 lewat aplikasi pendamping kesehatan preventif. Memegang UI/UX menyeluruh dan wireframe Figma — pelacakan nutrisi dan skrining dini diabetes dan CKD — plus proposisi nilai dan pitch deck, serta mengoordinasikan handoff ke developer Flutter.",
+        "features": [
+          "Alur pelacakan nutrisi",
+          "Skrining dini untuk diabetes & CKD",
+          "Proposisi nilai dan pitch deck yang dipresentasikan ke juri",
+          "Handoff desain-ke-dev untuk tim Flutter"
+        ],
+        "imageAlt": "Pratinjau sementara untuk aplikasi kesehatan MyLifeCo"
+      },
+      "suge": {
+        "name": "Suge Plastik POS System",
+        "role": "Full-Stack Developer (Freelance)",
+        "duration": "2023",
+        "description": "Sistem POS dan inventaris kustom yang dibangun bersama tim freelance 3 orang — operasional kasir, pelacakan inventaris, notifikasi restock, dan dasbor analitik penjualan, didukung PHP dan Laravel.",
+        "features": [
+          "Operasional kasir",
+          "Pelacakan inventaris dengan notifikasi restock",
+          "Dasbor analitik penjualan"
+        ],
+        "imageAlt": "Pratinjau sementara untuk sistem POS Suge Plastik"
+      },
+      "indochain": {
+        "name": "INDOCHAIN — Blockchain-based Supply Chain",
+        "role": "Desainer Konsep & Sistem",
+        "duration": "2020–2021",
+        "description": "Arsitektur fondasional, alur pengguna, dan visi produk untuk platform pelacakan vaksin COVID-19 berbasis blockchain — diakui dengan juara 1 Indigo Hackathon Festival 2021 dan juara 1 Indosat HackData 2020.",
+        "features": [
+          "Pelacakan rantai pasok vaksin di atas blockchain",
+          "Arsitektur sistem dan alur pengguna",
+          "Juara 1 — Indigo Hackathon Festival 2021",
+          "Juara 1 — Indosat HackData 2020"
+        ],
+        "imageAlt": "Pratinjau sementara untuk platform INDOCHAIN"
+      }
+    }
+  },
+  "education": {
+    "eyebrow": "Latar Akademik",
+    "title": "Pendidikan",
+    "items": {
+      "ut": {
+        "institution": "Universitas Terbuka",
+        "program": "Sarjana Statistika",
+        "dateRange": "2021 – Sekarang"
+      },
+      "smk": {
+        "institution": "SMK Negeri 2 Depok",
+        "program": "Sistem Informasi dan Jaringan",
+        "dateRange": "2018 – 2021"
+      }
+    }
+  },
+  "achievements": {
+    "eyebrow": "Dinding Trofi",
+    "title": "Penghargaan & Pencapaian",
+    "categories": {
+      "placement": "Penempatan",
+      "ranking": "Peringkat",
+      "incubation": "Inkubasi"
+    },
+    "items": {
+      "healthkathon": { "title": "2nd Place", "organizer": "BPJS Healthkathon", "year": "2024" },
+      "indigo": { "title": "1st Place", "organizer": "Indigo Hackathon Festival", "year": "2021" },
+      "hackdata": { "title": "1st Place", "organizer": "Hackdata Indosat Ooredoo Virtual Hackathon", "year": "2020" },
+      "jakbee": { "title": "Runner-up", "organizer": "Entrepreneur Empowerment DKI Jakarta / Jakbee", "year": "2020" },
+      "nextdev": { "title": "Top 10", "organizer": "The NextDev: Future of Content Idea Competition", "year": "2020" },
+      "ikaIts": { "title": "Top 25", "organizer": "Innovation Challenge and Business Summit IKA ITS", "year": "2020" },
+      "dslaunchpad": { "title": "Incubatee", "organizer": "DSLaunchpad 2.0 & 3.0 Incubation and Accelerator", "year": "2020–2021" }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Arsip Visual",
+    "title": "Galeri Portofolio",
+    "note": "Pratinjau sementara — karya final akan tampil di sini.",
+    "filters": {
+      "all": "Semua",
+      "websites": "Website",
+      "dashboards": "Dasbor",
+      "uiux": "Mockup UI/UX",
+      "mobile": "Aplikasi Mobile",
+      "dataviz": "Visualisasi Data",
+      "product": "Desain Produk"
+    },
+    "items": {
+      "websites": { "title": "Konsep Website 01", "alt": "Tempat screenshot website" },
+      "dashboards": { "title": "Antarmuka Dasbor 01", "alt": "Tempat antarmuka dasbor" },
+      "uiux": { "title": "Mockup UI/UX 01", "alt": "Tempat mockup UI/UX" },
+      "mobile": { "title": "Antarmuka Aplikasi Mobile 01", "alt": "Tempat antarmuka aplikasi mobile" },
+      "dataviz": { "title": "Visualisasi Data 01", "alt": "Tempat karya visualisasi data" },
+      "product": { "title": "Eksplorasi Desain Produk 01", "alt": "Tempat eksplorasi desain produk" }
+    },
+    "lightbox": { "close": "Tutup" }
+  },
+  "contact": {
+    "eyebrow": "Hubungi Saya",
+    "title": "Kontak",
+    "intro": "Punya proyek, peran, atau kolaborasi? Kotak masuk saya terbuka.",
+    "socialTitle": "Temukan saya di",
+    "socialNote": "Tautan profil segera hadir — sementara ini masih placeholder hingga URL asli tersedia.",
+    "form": {
+      "name": "Nama",
+      "namePlaceholder": "Nama lengkap Anda",
+      "email": "Email",
+      "emailPlaceholder": "anda@example.com",
+      "subject": "Subjek",
+      "subjectPlaceholder": "Tentang apa ini?",
+      "message": "Pesan",
+      "messagePlaceholder": "Ceritakan proyek, linimasa, dan tujuan Anda…",
+      "submit": "Kirim pesan",
+      "sending": "Mengirim…",
+      "retry": "Coba lagi",
+      "sendAnother": "Kirim pesan lain",
+      "successTitle": "Pesan terkirim!",
+      "successBody": "Terima kasih telah menghubungi — saya akan segera membalas.",
+      "errorBody": "Terjadi kesalahan saat mengirim pesan Anda. Silakan coba lagi.",
+      "errors": {
+        "required": "Kolom ini wajib diisi.",
+        "email": "Masukkan alamat email yang valid."
+      }
+    }
+  },
+  "thanks": {
+    "eyebrow": "Terima Kasih",
+    "line1": "Mari bangun",
+    "line2": "hal berikutnya.",
+    "body": "Terima kasih sudah menyimak sampai akhir. Jika karya saya cocok dengan Anda, saya ingin mendengar tentang proyek Anda."
+  },
+  "footer": {
+    "backToTop": "Kembali ke atas"
+  },
+  "splash": {
+    "tagline": "Manajer Proyek TI · Desainer Produk Teknis"
+  },
+  "a11y": {
+    "skipToContent": "Lewati ke konten",
+    "toggleTheme": "Ganti tema warna",
+    "toggleLanguage": "Ganti bahasa",
+    "scrollProgress": "Progres gulir halaman"
+  }
+}

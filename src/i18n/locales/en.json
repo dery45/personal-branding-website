@@ -1,0 +1,235 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "achievements": "Achievements",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "line1": "Dery",
+    "line2": "Andrian",
+    "fullName": "Dery Andrian Pratama",
+    "tagline": "Designing digital products with purpose.",
+    "scroll": "Scroll",
+    "portraitAlt": "Circular portrait of Dery Andrian Pratama"
+  },
+  "motto": {
+    "eyebrow": "My Principle",
+    "text": "I stand by what I say, because that's my ninja way."
+  },
+  "experience": {
+    "eyebrow": "Career Path",
+    "title": "Professional Experience",
+    "showMore": "Read more",
+    "showLess": "Show less",
+    "roles": {
+      "abadJaya": {
+        "org": "PT Abad Jaya Senantiasa",
+        "role": "Assistant Project Manager (Freelance)",
+        "dateRange": "Jan 2024 – Present",
+        "summary": "Bridging clients and engineers — turning business needs into shippable plans, and seeing products through to handover.",
+        "bullets": [
+          "Coordinate client ↔ engineering communication on requirements, constraints, and timelines.",
+          "Write PRDs and TRDs that translate business needs into development tasks.",
+          "Support the Lead PM across a school attendance/monitoring system, a Bank Indonesia survey platform, a poultry farm operations dashboard, and a multi-tenant retail POS app.",
+          "Run product handover: onboarding, demos, and end-user socialization."
+        ]
+      },
+      "bitTech": {
+        "org": "CV Bit Technology",
+        "role": "Project Manager & System Designer",
+        "dateRange": "Jan 2020 – Dec 2023",
+        "summary": "Owned product development end-to-end — from concept and wireframes to deployment — across blockchain, mobile, web, and data work.",
+        "bullets": [
+          "Managed product development from concept and wireframes through deployment.",
+          "Designed the system architecture for INDOCHAIN, a blockchain vaccine supply-chain tracking platform.",
+          "Designed UX and user flows for a mobile QR-validation app and a web analytics dashboard (hackathon-recognized).",
+          "Built responsive landing pages with HTML, CSS, JavaScript, and Bootstrap.",
+          "Produced social/news monitoring reports in R (Instagram, TikTok, YouTube).",
+          "Ran predictive follower-growth analysis and evaluated engagement, posting schedules, and hashtags.",
+          "Analyzed survey datasets of 800+ respondents.",
+          "Applied text mining and network analysis — bigram networks and word clouds — to news discourse."
+        ]
+      },
+      "kedata": {
+        "org": "PT Kedata Indonesia",
+        "role": "Data Analyst & Web Developer Intern",
+        "dateRange": "Jan 2020 – Dec 2021",
+        "summary": "Mixed data analysis with hands-on web development — from industry research reports to production websites.",
+        "bullets": [
+          "Ran multi-variable analysis in R for industry reports on coffee shops and 4–5★ hotels.",
+          "Conducted competitive and sentiment research via Instagram, Google Maps, GoFood, and Hotels.com.",
+          "Visualized engagement, peak hours, and demographics for stakeholders.",
+          "Built the Politisimeter company website from scratch with HTML, CSS, JavaScript, and Bootstrap.",
+          "Built and optimized WordPress sites for Politisimeter clients (performance + SEO)."
+        ]
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Selected Work",
+    "title": "Selected Projects",
+    "viewSource": "View source",
+    "items": {
+      "jagadAgro": {
+        "name": "Jagad Agro Wonoboyo",
+        "role": "Team Lead & Full-Stack Developer",
+        "duration": "Aug–Oct 2024",
+        "description": "Led a 3-person team with PPK Ormawa BEM FMIPA UNY building a web-based agricultural management platform for farmers in Wonoboyo, Klaten — from PRD and Figma wireframes to live demo and onboarding. The admin dashboard runs on the MERN stack.",
+        "features": [
+          "Reporting plus farmer & group demographics modules",
+          "Inventory and sales-transaction management",
+          "Spatial mapping of farmland",
+          "Built-in CMS for field admins"
+        ],
+        "imageAlt": "Placeholder preview for the Jagad Agro Wonoboyo platform"
+      },
+      "mylifeco": {
+        "name": "MyLifeCo — Healthcare Companion App",
+        "role": "Product Designer & Team Lead",
+        "duration": "2024",
+        "description": "Led a 3-person team to 2nd place out of 1,100+ teams at BPJS Healthkathon 2024 with a preventive-health companion app. Owned end-to-end UI/UX and Figma wireframes — nutrition tracking and early screening for diabetes and CKD — plus the value proposition and pitch deck, and coordinated handoff to Flutter developers.",
+        "features": [
+          "Nutrition tracking flows",
+          "Early screening for diabetes & CKD",
+          "Value proposition and pitch deck presented to judges",
+          "Design-to-dev handoff to the Flutter team"
+        ],
+        "imageAlt": "Placeholder preview for the MyLifeCo healthcare app"
+      },
+      "suge": {
+        "name": "Suge Plastik POS System",
+        "role": "Full-Stack Developer (Freelance)",
+        "duration": "2023",
+        "description": "Custom POS and inventory system built with a 3-person freelance team — cashier operations, inventory tracking, restock notifications, and a sales analytics dashboard, powered by PHP and Laravel.",
+        "features": [
+          "Cashier operations",
+          "Inventory tracking with restock notifications",
+          "Sales analytics dashboard"
+        ],
+        "imageAlt": "Placeholder preview for the Suge Plastik POS system"
+      },
+      "indochain": {
+        "name": "INDOCHAIN — Blockchain-based Supply Chain",
+        "role": "Concept & System Designer",
+        "duration": "2020–2021",
+        "description": "Foundational architecture, user flows, and product vision for a blockchain-based COVID-19 vaccine supply-chain tracking platform — recognized with 1st place at Indigo Hackathon Festival 2021 and 1st place at Indosat HackData 2020.",
+        "features": [
+          "Vaccine supply-chain tracking on blockchain",
+          "System architecture and user flows",
+          "1st place — Indigo Hackathon Festival 2021",
+          "1st place — Indosat HackData 2020"
+        ],
+        "imageAlt": "Placeholder preview for the INDOCHAIN platform"
+      }
+    }
+  },
+  "education": {
+    "eyebrow": "Academic Background",
+    "title": "Education",
+    "items": {
+      "ut": {
+        "institution": "Universitas Terbuka",
+        "program": "Bachelor of Statistics",
+        "dateRange": "2021 – Present"
+      },
+      "smk": {
+        "institution": "SMK Negeri 2 Depok",
+        "program": "Information Systems and Networking",
+        "dateRange": "2018 – 2021"
+      }
+    }
+  },
+  "achievements": {
+    "eyebrow": "Trophy Wall",
+    "title": "Awards & Achievements",
+    "categories": {
+      "placement": "Placement",
+      "ranking": "Ranking",
+      "incubation": "Incubation"
+    },
+    "items": {
+      "healthkathon": { "title": "2nd Place", "organizer": "BPJS Healthkathon", "year": "2024" },
+      "indigo": { "title": "1st Place", "organizer": "Indigo Hackathon Festival", "year": "2021" },
+      "hackdata": { "title": "1st Place", "organizer": "Hackdata Indosat Ooredoo Virtual Hackathon", "year": "2020" },
+      "jakbee": { "title": "Runner-up", "organizer": "Entrepreneur Empowerment DKI Jakarta / Jakbee", "year": "2020" },
+      "nextdev": { "title": "Top 10", "organizer": "The NextDev: Future of Content Idea Competition", "year": "2020" },
+      "ikaIts": { "title": "Top 25", "organizer": "Innovation Challenge and Business Summit IKA ITS", "year": "2020" },
+      "dslaunchpad": { "title": "Incubatee", "organizer": "DSLaunchpad 2.0 & 3.0 Incubation and Accelerator", "year": "2020–2021" }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Visual Archive",
+    "title": "Portfolio Showcase",
+    "note": "Placeholder previews — final artwork drops in here.",
+    "filters": {
+      "all": "All",
+      "websites": "Websites",
+      "dashboards": "Dashboards",
+      "uiux": "UI/UX Mockups",
+      "mobile": "Mobile Apps",
+      "dataviz": "Data Visualization",
+      "product": "Product Design"
+    },
+    "items": {
+      "websites": { "title": "Website Concept 01", "alt": "Placeholder website screenshot" },
+      "dashboards": { "title": "Dashboard Interface 01", "alt": "Placeholder dashboard interface" },
+      "uiux": { "title": "UI/UX Mockup 01", "alt": "Placeholder UI/UX mockup" },
+      "mobile": { "title": "Mobile App Interface 01", "alt": "Placeholder mobile app interface" },
+      "dataviz": { "title": "Data Visualization 01", "alt": "Placeholder data visualization piece" },
+      "product": { "title": "Product Design Exploration 01", "alt": "Placeholder product design exploration" }
+    },
+    "lightbox": { "close": "Close" }
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Contact",
+    "intro": "Have a project, role, or collaboration in mind? My inbox is open.",
+    "socialTitle": "Find me on",
+    "socialNote": "Profile links coming soon — placeholders until real URLs are supplied.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project, timeline, and goals…",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "retry": "Try again",
+      "sendAnother": "Send another message",
+      "successTitle": "Message sent!",
+      "successBody": "Thanks for reaching out — I'll get back to you soon.",
+      "errorBody": "Something went wrong sending your message. Please try again.",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Enter a valid email address."
+      }
+    }
+  },
+  "thanks": {
+    "eyebrow": "Thank You",
+    "line1": "Let's build",
+    "line2": "what's next.",
+    "body": "Thanks for scrolling this far. If my work resonates with you, I'd love to hear about your project."
+  },
+  "footer": {
+    "backToTop": "Back to top"
+  },
+  "splash": {
+    "tagline": "IT Project Manager · Technical Product Designer"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "toggleTheme": "Toggle color theme",
+    "toggleLanguage": "Switch language",
+    "scrollProgress": "Page scroll progress"
+  }
+}

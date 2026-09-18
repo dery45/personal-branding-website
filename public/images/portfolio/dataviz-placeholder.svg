@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#121619"/>
+  <circle cx="300" cy="195" r="95" fill="none" stroke="#B6FF00" stroke-width="3" opacity="0.7"/>
+  <path d="M300 195 L300 100 A95 95 0 0 1 382 242 Z" fill="#00CFFF" opacity="0.5"/>
+  <path d="M300 195 L382 242 A95 95 0 0 1 300 290 Z" fill="#FF3CAC" opacity="0.5"/>
+  <path d="M300 195 L300 290 A95 95 0 0 1 218 242 Z" fill="#B6FF00" opacity="0.5"/>
+  <text x="300" y="380" text-anchor="middle" font-family="sans-serif" font-size="22" letter-spacing="4" fill="#A7ADB4">DATAVIZ · 4:3</text>
+</svg>

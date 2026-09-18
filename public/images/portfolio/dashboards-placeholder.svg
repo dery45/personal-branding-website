@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#121619"/>
+  <rect x="120" y="200" width="60" height="130" rx="6" fill="#00CFFF" opacity="0.6"/>
+  <rect x="200" y="150" width="60" height="180" rx="6" fill="#B6FF00" opacity="0.6"/>
+  <rect x="280" y="230" width="60" height="100" rx="6" fill="#FF3CAC" opacity="0.6"/>
+  <rect x="360" y="110" width="60" height="220" rx="6" fill="#00CFFF" opacity="0.6"/>
+  <line x1="100" y1="330" x2="500" y2="330" stroke="#F5F5F5" stroke-width="3" opacity="0.4"/>
+  <text x="300" y="380" text-anchor="middle" font-family="sans-serif" font-size="22" letter-spacing="4" fill="#A7ADB4">DASHBOARDS · 4:3</text>
+</svg>

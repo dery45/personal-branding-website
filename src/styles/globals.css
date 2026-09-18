@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ Design tokens (canonical) ============ */
+:root,
+:root[data-theme='dark'],
+[data-theme='dark'] {
+  --bg-primary: #080a0d;
+  --bg-secondary: #121619;
+  --neon-blue: #00cfff;
+  --neon-green: #b6ff00;
+  --neon-pink: #ff3cac;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a7adb4;
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.35);
+  --scrim: rgba(0, 0, 0, 0.25);
+  /* Text placed on filled neon surfaces (buttons, active chips) */
+  --on-neon: #0a0f02;
+  /* Soft neon glow for portrait ring (themed to match --neon-green) */
+  --glow-green: rgba(182, 255, 0, 0.25);
+
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg-primary: #f5f5f0;
+  --bg-secondary: #e9ebe6;
+  --neon-blue: #007fa8;
+  --neon-green: #527f00;
+  --neon-pink: #c51d78;
+  --text-primary: #111418;
+  --text-secondary: #626970;
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(17, 20, 24, 0.1);
+  --glass-shadow: rgba(17, 20, 24, 0.12);
+  --scrim: rgba(255, 255, 255, 0.35);
+  /* White text keeps AA contrast on the darker light-mode neons */
+  --on-neon: #ffffff;
+  --glow-green: rgba(82, 127, 0, 0.25);
+
+  color-scheme: light;
+}
+
+/* ============ Base ============ */
+::selection {
+  background: var(--neon-blue);
+  color: var(--bg-primary);
+}
+[data-theme='light'] ::selection {
+  background: var(--neon-blue);
+  color: var(--bg-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Aldrich', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle grain/noise overlay on bg */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: 'Tektur', system-ui, sans-serif;
+}
+
+/* Visible custom focus ring (replaces reliance on default outline) */
+:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============ Glass system ============ */
+.glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  border-radius: 1rem;
+}
+
+.glass-glow-blue:hover,
+.glass-glow-blue:focus-visible {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 24px rgba(0, 207, 255, 0.35);
+}
+.glass-glow-green:hover,
+.glass-glow-green:focus-visible {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 24px rgba(182, 255, 0, 0.3);
+}
+.glass-glow-pink:hover,
+.glass-glow-pink:focus-visible {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 24px rgba(255, 60, 172, 0.3);
+}
+
+[data-theme='light'] .glass-glow-blue:hover,
+[data-theme='light'] .glass-glow-blue:focus-visible {
+  box-shadow: 0 0 24px rgba(0, 127, 168, 0.25);
+}
+[data-theme='light'] .glass-glow-green:hover,
+[data-theme='light'] .glass-glow-green:focus-visible {
+  box-shadow: 0 0 24px rgba(82, 127, 0, 0.22);
+}
+[data-theme='light'] .glass-glow-pink:hover,
+[data-theme='light'] .glass-glow-pink:focus-visible {
+  box-shadow: 0 0 24px rgba(197, 29, 120, 0.22);
+}
+
+/* Scrim for text directly on glass over busy photos (WCAG AA contrast) */
+.glass-scrim {
+  background: var(--scrim);
+  border-radius: 0.75rem;
+}
+
+/*
+ * .glass-flat — same frosted look as .glass but WITHOUT backdrop-filter.
+ * Use for frames/panels sitting over solid backgrounds or fully opaque photos,
+ * where blur is visually identical to a flat fill but costs GPU. Keeps the
+ * page within the ≤4–5 simultaneous blurred elements budget.
+ */
+.glass-flat {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  border-radius: 1rem;
+}
+
+/*
+ * .on-photo — pin a dark scrim + light text for overlays floating over photos,
+ * in BOTH themes (photo brightness is unknown, dark scrim + light text is the
+ * safe pairing). Scoped var overrides recolor text-text-primary/secondary inside.
+ */
+.on-photo {
+  --text-primary: #f5f5f5;
+  --text-secondary: #c9cfd4;
+  background: rgba(8, 10, 13, 0.55);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Fallback when backdrop-filter unsupported: solid semi-opaque bg */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  :root[data-theme='dark'] .glass,
+  [data-theme='dark'] .glass {
+    background: rgba(18, 22, 25, 0.92);
+  }
+  [data-theme='light'] .glass {
+    background: rgba(255, 255, 255, 0.92);
+  }
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  background: var(--neon-blue);
+  color: var(--on-neon);
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Scroll indicator animation (disabled under reduced motion via media query above) */
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+.animate-scroll-dot {
+  animation: scroll-dot 1.8s ease-in-out infinite;
+}
