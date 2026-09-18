@@ -13,7 +13,7 @@ export function Thanks() {
   const reduced = useReducedMotion();
 
   return (
-    <SectionWrapper id="thanks" labelledBy="thanks-heading" className="!pb-8 md:!pb-10">
+    <SectionWrapper id="thanks" labelledBy="thanks-heading">
       <div className="flex min-h-[60vh] flex-col items-center justify-center text-center">
         <motion.p
           initial={reduced ? { opacity: 0 } : { opacity: 0, y: 16 }}

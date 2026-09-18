@@ -22,6 +22,8 @@
   --on-neon: #0a0f02;
   /* Soft neon glow for portrait ring (themed to match --neon-green) */
   --glow-green: rgba(182, 255, 0, 0.25);
+  /* Motto quote ink: neon green in dark, near-black in light */
+  --motto-ink: var(--neon-green);
 
   color-scheme: dark;
 }
@@ -42,6 +44,7 @@
   /* White text keeps AA contrast on the darker light-mode neons */
   --on-neon: #ffffff;
   --glow-green: rgba(82, 127, 0, 0.25);
+  --motto-ink: #111418;
 
   color-scheme: light;
 }
@@ -195,6 +198,22 @@ h3,
   [data-theme='light'] .glass {
     background: rgba(255, 255, 255, 0.92);
   }
+}
+
+/*
+ * Motto backdrop fades: solid theme color at the very top/bottom melts into a
+ * sustained wash across the full photo height (theme-aware via --bg-primary:
+ * near-black in dark, off-white in light), so the gradient reads edge to edge
+ * while the image still shows through behind the quote.
+ */
+.motto-fade {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-primary) 0%,
+    color-mix(in srgb, var(--bg-primary) 70%, transparent) 25%,
+    color-mix(in srgb, var(--bg-primary) 70%, transparent) 75%,
+    var(--bg-primary) 100%
+  );
 }
 
 /* Skip link */
