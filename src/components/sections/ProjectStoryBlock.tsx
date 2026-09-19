@@ -1,3 +1,4 @@
+import { type ElementType } from 'react';
 import { motion } from 'framer-motion';
 import { Check, ExternalLink } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
@@ -23,14 +24,17 @@ interface ProjectStoryBlockProps {
   entry: ProjectEntry;
   /** drives left/right alternation */
   index: number;
+  /** false inside the scroll-driven deck — the deck's transform is the only motion there */
+  animateOnView?: boolean;
 }
 
 /**
  * ProjectStoryBlock — editorial story block, image-vs-text alternating per project.
  * Props: entry { name, role, duration, description, features[], tech[], image, fallbackImage, imageAlt, sourceUrl? }.
  * "View source" renders ONLY when sourceUrl exists — otherwise omitted entirely.
+ * The whole block sits in one opaque card so stacked cards never show through each other.
  */
-export function ProjectStoryBlock({ entry, index }: ProjectStoryBlockProps) {
+export function ProjectStoryBlock({ entry, index, animateOnView = true }: ProjectStoryBlockProps) {
   const { t } = useTranslation();
   const reduced = useReducedMotion();
   const imageFirst = index % 2 === 1;
@@ -42,8 +46,14 @@ export function ProjectStoryBlock({ entry, index }: ProjectStoryBlockProps) {
     transition: { duration: reduced ? 0.05 : 0.6, ease: 'easeOut' as const },
   };
 
+  const Wrapper: ElementType = animateOnView ? motion.article : 'article';
+  const motionProps = animateOnView ? rise : {};
+
   return (
-    <motion.article {...rise} className="grid items-stretch gap-6 md:grid-cols-2 md:gap-10">
+    <Wrapper
+      {...motionProps}
+      className="relative grid items-stretch gap-6 rounded-3xl border border-[var(--glass-border)] bg-[var(--bg-secondary)] p-5 shadow-[0_8px_32px_var(--glass-shadow)] md:grid-cols-2 md:gap-10 md:p-8"
+    >
       {/* Image panel with glass info overlay */}
       <div className={`relative ${imageFirst ? 'md:order-2' : ''}`}>
         <div className="relative h-full min-h-[280px] overflow-hidden rounded-3xl border border-[var(--glass-border)] bg-[var(--bg-secondary)] shadow-[0_8px_32px_var(--glass-shadow)]">
@@ -119,6 +129,6 @@ export function ProjectStoryBlock({ entry, index }: ProjectStoryBlockProps) {
           </div>
         )}
       </div>
-    </motion.article>
+    </Wrapper>
   );
 }

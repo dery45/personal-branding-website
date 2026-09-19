@@ -44,8 +44,8 @@ const PROJECTS: ProjectDatum[] = [
 
 /**
  * SECTION 04 — Selected Projects.
- * Scroll-linked horizontal stacking deck (falls back to a static vertical
- * stack under reduced motion so content never depends on scroll-scrubbing).
+ * Heading through SectionWrapper; the stacking deck renders full-bleed right
+ * after it. Reduced motion falls back to a static vertical stack.
  */
 export function Projects() {
   const { t, ta } = useTranslation();
@@ -65,31 +65,42 @@ export function Projects() {
   }));
 
   return (
-    <SectionWrapper id="projects" labelledBy="projects-heading">
-      <motion.div
-        initial={reduced ? { opacity: 0 } : { opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: reduced ? 0.05 : 0.5 }}
-        className="mb-12 text-center md:mb-16"
-      >
-        <p className="text-caption font-bold uppercase tracking-[0.35em] text-neon-green">
-          {t('projects.eyebrow')}
-        </p>
-        <h2 id="projects-heading" className="font-display mt-3 text-display-lg font-extrabold text-text-primary">
-          {t('projects.title')}
-        </h2>
-      </motion.div>
+    <>
+      <SectionWrapper id="projects" labelledBy="projects-heading">
+        <motion.div
+          initial={reduced ? { opacity: 0 } : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: reduced ? 0.05 : 0.5 }}
+          className="mb-16 text-center md:mb-24"
+        >
+          <p className="text-caption font-bold uppercase tracking-[0.35em] text-neon-green">
+            {t('projects.eyebrow')}
+          </p>
+          <h2 id="projects-heading" className="font-display mt-3 text-display-lg font-extrabold text-text-primary">
+            {t('projects.title')}
+          </h2>
+        </motion.div>
 
-      {reduced ? (
-        <div className="space-y-16 md:space-y-24">
-          {entries.map((entry, i) => (
-            <ProjectStoryBlock key={PROJECTS[i].key} entry={entry} index={i} />
-          ))}
+        {reduced && (
+          <div className="space-y-16 md:space-y-24">
+            {entries.map((entry, i) => (
+              <ProjectStoryBlock key={PROJECTS[i].key} entry={entry} index={i} />
+            ))}
+          </div>
+        )}
+      </SectionWrapper>
+
+      {/* Full-bleed stacking deck — outside SectionWrapper's max-width so cards
+          can use the true viewport width; not nested, so it can't be clipped
+          against a narrower content column.
+          NOTE: overflow-x-clip (NOT hidden) — `hidden` creates a scroll
+          container that would break the sticky pin; `clip` clips without one. */}
+      {!reduced && (
+        <div className="relative w-full overflow-x-clip">
+          <ProjectStackCards entries={entries} entryKeys={PROJECTS.map((p) => p.key)} />
         </div>
-      ) : (
-        <ProjectStackCards entries={entries} entryKeys={PROJECTS.map((p) => p.key)} />
       )}
-    </SectionWrapper>
+    </>
   );
 }
