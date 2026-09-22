@@ -10,7 +10,7 @@ interface AchievementDatum {
 }
 
 // All 7 recognitions in reverse-chronological order, one unified grid.
-// Category stays color-coded per card (blue/green/pink); DSLaunchpad remains
+// Category stays on each card via icon + label (single blue accent site-wide); DSLaunchpad remains
 // participation, never a "win".
 const ACHIEVEMENTS: AchievementDatum[] = [
   { key: 'healthkathon', category: 'placement' },

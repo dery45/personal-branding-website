@@ -65,19 +65,19 @@ export function PersonalMotto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: reduced ? 0.05 : 0.5 }}
-          className="text-caption font-bold uppercase tracking-[0.35em] text-neon-pink drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]"
+            className="text-caption font-bold uppercase tracking-[0.35em] text-neon-blue"
         >
           {t('motto.eyebrow')}
         </motion.p>
 
-        <div aria-hidden="true" className="my-6 h-px w-24 bg-gradient-to-r from-transparent via-neon-pink to-transparent" />
+          <div aria-hidden="true" className="my-6 h-px w-24 bg-gradient-to-r from-transparent via-neon-blue to-transparent" />
 
         <motion.blockquote
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-100px' }}
-            className="font-display max-w-4xl text-display-lg font-extrabold leading-tight text-[var(--motto-ink)] drop-shadow-[0_2px_16px_rgba(0,0,0,0.65)]"
+            className="font-display max-w-4xl text-display-lg font-extrabold leading-tight text-[var(--motto-ink)]"
         >
           <span className="sr-only">{text}</span>
           {words.map((w, i) => (

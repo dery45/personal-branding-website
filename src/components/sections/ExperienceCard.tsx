@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Briefcase, ChevronDown } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
-import { GlassCard } from '../ui/GlassPanel';
 
 export interface ExperienceEntry {
   org: string;
@@ -43,7 +42,10 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
       transition={{ duration: reduced ? 0.05 : 0.55, delay: reduced ? 0 : (index % 3) * 0.1, ease: 'easeOut' }}
       className="h-full"
     >
-      <GlassCard glow="blue" className="h-full transition-shadow">
+      {/* Flat (non-blurred) panel: this card translates every scroll frame while
+          pinned, and backdrop-blur would force a full repaint per frame. Over
+          the solid page background .glass-flat is visually identical to glass. */}
+      <div className="glass-flat glass-glow-blue h-full p-6 transition-shadow">
         <div className="flex items-start gap-3">
           <span aria-hidden="true" className="glass-scrim mt-0.5 rounded-lg p-2 text-neon-blue">
             <Briefcase size={17} />
@@ -71,7 +73,7 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
             >
               {entry.bullets.map((b, i) => (
                 <li key={i} className="flex gap-2.5 text-body text-text-secondary">
-                  <span aria-hidden="true" className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-neon-green" />
+                  <span aria-hidden="true" className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-neon-blue" />
                   <span>{b}</span>
                 </li>
               ))}
@@ -93,7 +95,7 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
             className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
           />
         </button>
-      </GlassCard>
+      </div>
     </motion.div>
   );
 }

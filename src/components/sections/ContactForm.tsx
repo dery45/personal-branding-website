@@ -30,7 +30,7 @@ export function ContactForm() {
         role="status"
         className="glass rounded-2xl p-8 text-center"
       >
-        <CheckCircle2 size={40} aria-hidden="true" className="mx-auto text-neon-green" />
+        <CheckCircle2 size={40} aria-hidden="true" className="mx-auto text-neon-blue" />
         <p className="font-display mt-4 text-display-md font-extrabold text-text-primary">
           {t('contact.form.successTitle')}
         </p>
@@ -83,7 +83,7 @@ export function ContactForm() {
           />
         )}
         {hasError && (
-          <p id={errId} role="alert" className="mt-1.5 text-caption font-bold text-neon-pink">
+          <p id={errId} role="alert" className="mt-1.5 text-caption font-bold text-neon-blue">
             {errors[key]}
           </p>
         )}
@@ -126,8 +126,8 @@ export function ContactForm() {
 
       <div aria-live="polite">
         {status === 'error' && (
-          <p role="alert" className="mt-5 flex items-start gap-2 rounded-xl border border-neon-pink/40 bg-neon-pink/10 px-4 py-3 text-body text-text-primary">
-            <AlertCircle size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-neon-pink" />
+          <p role="alert" className="mt-5 flex items-start gap-2 rounded-xl border border-neon-blue/40 bg-neon-blue/10 px-4 py-3 text-body text-text-primary">
+            <AlertCircle size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-neon-blue" />
             <span>{t('contact.form.errorBody')}</span>
           </p>
         )}

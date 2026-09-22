@@ -63,7 +63,7 @@ export function Navbar() {
       >
         <a
           href="#hero"
-          className="font-display text-lg font-extrabold tracking-widest text-text-primary"
+          className="font-tektur text-lg font-extrabold tracking-widest text-text-primary"
         >
           DERY<span className="text-neon-blue">.</span>
         </a>

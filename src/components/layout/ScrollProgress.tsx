@@ -15,7 +15,7 @@ export function ScrollProgress() {
       className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px] bg-transparent"
     >
       <div
-        className="h-full bg-gradient-to-r from-neon-blue via-neon-green to-neon-pink"
+        className="h-full bg-neon-blue"
         style={{ width: `${progress * 100}%` }}
       />
     </div>

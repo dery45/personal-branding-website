@@ -1,13 +1,31 @@
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 
+export interface PortfolioCaseDetails {
+  name: string;
+  year: string;
+  team: string;
+  description: string[];
+}
+
 export interface PortfolioEntry {
+  /** unique tile id (React key) — distinct from category, since one item can span several */
+  id: string;
   title: string;
+  /** primary category (tile caption); full list below drives filter matching */
   category: string;
   categoryLabel: string;
+  categories: string[];
   image: string;
-  fallbackImage: string;
+  /** optional static fallback (placeholder tiles); omitted for bundled real artwork */
+  fallbackImage?: string;
   alt: string;
+  /** optional file link — Lightbox renders an open-file action when present */
+  pdf?: string;
+  /** optional label override for the file action (defaults to portfolio.viewPdf) */
+  pdfLabel?: string;
+  /** optional rich case-study details — Lightbox renders the two-column layout when present */
+  details?: PortfolioCaseDetails;
 }
 
 interface PortfolioTileProps {
@@ -47,7 +65,7 @@ export function PortfolioTile({ entry, index, onOpen }: PortfolioTileProps) {
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
-              if (!img.dataset.fbk) {
+              if (!img.dataset.fbk && entry.fallbackImage) {
                 img.dataset.fbk = '1';
                 img.src = entry.fallbackImage;
               } else {

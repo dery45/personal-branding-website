@@ -167,6 +167,8 @@
     "eyebrow": "Visual Archive",
     "title": "Portfolio Showcase",
     "note": "Placeholder previews — final artwork drops in here.",
+    "viewPdf": "View case study (PDF)",
+    "viewPortfolio": "View portfolio file",
     "filters": {
       "all": "All",
       "websites": "Websites",
@@ -178,8 +180,41 @@
     },
     "items": {
       "websites": { "title": "Website Concept 01", "alt": "Placeholder website screenshot" },
+      "jagad": {
+        "title": "Jagad Agro Wonoboyo",
+        "alt": "Jagad Agro Wonoboyo project cover",
+        "name": "Jagad Agro Wonoboyo",
+        "year": "2024",
+        "team": "WeKreativa x Universitas Yogyakarta",
+        "description": [
+          "This project was initiated by WeKreativa in collaboration with students from the PPKM Ormawa program at Universitas Negeri Yogyakarta (UNY) in 2024. The project was developed to address the agricultural needs and challenges of the Wonoboyo Village community in Jogonalan, Klaten, Central Java.",
+          "By implementing smart farming technologies, the project aims to improve the efficiency, productivity, and sustainability of local agricultural practices. The initiative is expected to provide practical benefits for farmers while supporting the broader economic and social development of the Wonoboyo Village community."
+        ]
+      },
       "dashboards": { "title": "Dashboard Interface 01", "alt": "Placeholder dashboard interface" },
-      "uiux": { "title": "UI/UX Mockup 01", "alt": "Placeholder UI/UX mockup" },
+      "uiux": {
+        "title": "CuanCraft — UX Case Study",
+        "alt": "CuanCraft UX case study cover",
+        "name": "Cuancraft",
+        "year": "2024",
+        "team": "WeKreativa",
+        "description": [
+          "This project was originally developed for the Bank Rakyat Indonesia Hackathon, which focused on financial literacy, together with the WeKreativa team.",
+          "Through this project, we aimed to address the issue of low financial literacy among Indonesian society, which can make people more vulnerable to online gambling, illegal or excessive use of online loans, and making investment decisions driven by the Fear of Missing Out (FOMO).",
+          "To address these challenges, we developed Cuancraft, a gamification-based financial literacy platform designed to make financial concepts more interactive, engaging, and easier to understand. In addition to its educational features, Cuancraft also provides financial management tools that help users apply what they learn to their everyday financial decisions."
+        ]
+      },
+      "point": {
+        "title": "Point Property Solo",
+        "alt": "Point Property Solo project cover",
+        "name": "Point Property Solo",
+        "year": "2025",
+        "team": "PT Abad Jaya Senantiasa",
+        "description": [
+          "Point Property is a property marketplace platform that helps users discover various types of properties, including houses, boarding houses, and rental properties across Solo Raya, Central Java, and surrounding areas. This project was carried out for PT Abad Jaya Senantiasa, with Point Property Solo as the client.",
+          "For this project, I was involved in the UI/UX redesign process to improve the overall experience of discovering, browsing, and managing property information. The redesign covered the main website, mobile web experience, and admin dashboard, addressing both end-user and platform management needs."
+        ]
+      },
       "mobile": { "title": "Mobile App Interface 01", "alt": "Placeholder mobile app interface" },
       "dataviz": { "title": "Data Visualization 01", "alt": "Placeholder data visualization piece" },
       "product": { "title": "Product Design Exploration 01", "alt": "Placeholder product design exploration" }

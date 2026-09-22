@@ -24,8 +24,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Tektur', 'system-ui', 'sans-serif'],
-        body: ['Aldrich', 'system-ui', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        body: ['"Source Sans Pro"', 'system-ui', 'sans-serif'],
+        tektur: ['Tektur', 'system-ui', 'sans-serif'],
+        aldrich: ['Aldrich', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['clamp(2.5rem, 6vw + 1rem, 5.5rem)', { lineHeight: '1.02', letterSpacing: '-0.02em' }],

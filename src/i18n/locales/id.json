@@ -167,6 +167,8 @@
     "eyebrow": "Arsip Visual",
     "title": "Galeri Portofolio",
     "note": "Pratinjau sementara — karya final akan tampil di sini.",
+    "viewPdf": "Lihat studi kasus (PDF)",
+    "viewPortfolio": "Lihat berkas portofolio",
     "filters": {
       "all": "Semua",
       "websites": "Website",
@@ -178,8 +180,41 @@
     },
     "items": {
       "websites": { "title": "Konsep Website 01", "alt": "Tempat screenshot website" },
+      "jagad": {
+        "title": "Jagad Agro Wonoboyo",
+        "alt": "Sampul proyek Jagad Agro Wonoboyo",
+        "name": "Jagad Agro Wonoboyo",
+        "year": "2024",
+        "team": "WeKreativa x Universitas Yogyakarta",
+        "description": [
+          "Proyek ini merupakan inisiatif WeKreativa yang berkolaborasi dengan mahasiswa program PPKM Ormawa Universitas Negeri Yogyakarta (UNY) pada tahun 2024. Proyek ini dikembangkan untuk menjawab berbagai kebutuhan dan permasalahan di bidang pertanian yang dihadapi oleh masyarakat Desa Wonoboyo, Jogonalan, Klaten, Jawa Tengah.",
+          "Melalui penerapan teknologi smart farming, proyek ini bertujuan untuk meningkatkan efisiensi, produktivitas, dan keberlanjutan praktik pertanian di Desa Wonoboyo. Selain membantu petani dalam menjalankan aktivitas pertanian secara lebih efektif, inisiatif ini juga diharapkan dapat mendukung perkembangan ekonomi dan kesejahteraan masyarakat desa secara lebih luas."
+        ]
+      },
       "dashboards": { "title": "Antarmuka Dasbor 01", "alt": "Tempat antarmuka dasbor" },
-      "uiux": { "title": "Mockup UI/UX 01", "alt": "Tempat mockup UI/UX" },
+      "uiux": {
+        "title": "CuanCraft — UX Case Study",
+        "alt": "Sampul studi kasus UX CuanCraft",
+        "name": "Cuancraft",
+        "year": "2024",
+        "team": "WeKreativa",
+        "description": [
+          "Project ini awalnya dikembangkan untuk mengikuti Hackathon Bank Rakyat Indonesia dengan tema literasi keuangan bersama tim WeKreativa.",
+          "Melalui project ini, kami berupaya menjawab permasalahan rendahnya literasi keuangan di masyarakat Indonesia, yang dapat membuat seseorang lebih rentan terjebak dalam judi online (Judol), pinjaman online (Pinjol), maupun mengambil keputusan investasi berdasarkan Fear of Missing Out (FOMO).",
+          "Sebagai solusi, kami membangun Cuancraft, sebuah platform edukasi literasi keuangan berbasis gamifikasi yang dirancang agar konsep keuangan dapat dipahami dengan cara yang lebih interaktif dan mudah dipahami. Selain aspek edukasi, Cuancraft juga dilengkapi dengan fitur manajemen keuangan untuk membantu pengguna menerapkan pengetahuan yang mereka peroleh dalam mengelola keuangan sehari-hari."
+        ]
+      },
+      "point": {
+        "title": "Point Property Solo",
+        "alt": "Sampul proyek Point Property Solo",
+        "name": "Point Property Solo",
+        "year": "2025",
+        "team": "PT Abad Jaya Senantiasa",
+        "description": [
+          "Point Property adalah platform marketplace properti yang membantu pengguna mencari berbagai jenis properti, seperti rumah, kos, dan rumah sewa di wilayah Solo Raya, Jawa Tengah, dan sekitarnya. Proyek ini dikerjakan untuk PT Abad Jaya Senantiasa dengan Point Property Solo sebagai client.",
+          "Dalam proyek ini, saya terlibat dalam proses redesign UI/UX untuk meningkatkan pengalaman pengguna dalam mencari, melihat, dan mengelola informasi properti. Redesign mencakup website utama, versi mobile web, serta admin dashboard untuk mendukung kebutuhan pengguna dan pengelola platform."
+        ]
+      },
       "mobile": { "title": "Antarmuka Aplikasi Mobile 01", "alt": "Tempat antarmuka aplikasi mobile" },
       "dataviz": { "title": "Visualisasi Data 01", "alt": "Tempat karya visualisasi data" },
       "product": { "title": "Eksplorasi Desain Produk 01", "alt": "Tempat eksplorasi desain produk" }

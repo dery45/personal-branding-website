@@ -23,7 +23,7 @@ export function Contact() {
         transition={{ duration: reduced ? 0.05 : 0.5 }}
         className="mb-10 text-center"
       >
-        <p className="text-caption font-bold uppercase tracking-[0.35em] text-neon-pink">
+        <p className="text-caption font-bold uppercase tracking-[0.35em] text-neon-blue">
           {t('contact.eyebrow')}
         </p>
         <h2 id="contact-heading" className="font-display mt-3 text-display-lg font-extrabold text-text-primary">
@@ -40,7 +40,7 @@ export function Contact() {
             {t('contact.socialTitle')}
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
-            <SocialLinks size="md" glow="pink" />
+            <SocialLinks size="md" glow="blue" />
           </div>
           <p className="mt-4 max-w-xs text-caption text-text-secondary">{t('contact.socialNote')}</p>
         </aside>

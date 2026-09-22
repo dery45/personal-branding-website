@@ -23,7 +23,7 @@ export function Button(props: ButtonProps) {
   const { variant = 'glass', children, className = '', ...rest } = props;
   const styles =
     variant === 'solid-neon'
-      ? 'bg-neon-green text-[var(--on-neon)] hover:brightness-110 border border-transparent font-bold'
+      ? 'bg-neon-blue text-[var(--on-neon)] hover:brightness-110 border border-transparent font-bold'
       : 'glass glass-glow-blue text-text-primary hover:border-neon-blue';
 
   const cls = `inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${styles} ${className}`.trim();

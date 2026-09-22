@@ -6,7 +6,7 @@ import portraitSrc from '../../assets/images/Main-Images_Dery Andrian Pratama.pn
 
 /**
  * SECTION 01 — Home / Hero.
- * Oversized two-line neon-green display name with a circular portrait
+ * Oversized two-line neon-blue display name with a circular portrait
  * overlapping the seam between the lines, a single tagline, and a scroll
  * chevron as the only interactive affordance. No buttons.
  */
@@ -30,7 +30,7 @@ export function Hero() {
             id="hero-heading"
             aria-label={t('hero.fullName')}
             {...line(0.05)}
-            className="font-display text-[clamp(3.5rem,15vw,13rem)] font-black uppercase leading-[0.88] tracking-tight text-neon-green"
+            className="font-tektur text-[clamp(3.5rem,15vw,13rem)] font-black uppercase leading-[0.88] tracking-tight text-neon-blue"
           >
             <span aria-hidden="true" className="block">
               {t('hero.line1')}
@@ -59,7 +59,7 @@ export function Hero() {
               height={1286}
               loading="eager"
               fetchPriority="high"
-              className="size-[clamp(110px,24vw,260px)] rounded-full border-2 border-neon-green/70 object-cover shadow-[0_0_48px_var(--glow-green)]"
+              className="size-[clamp(110px,24vw,260px)] rounded-full border-2 border-neon-blue/70 object-cover shadow-[0_0_48px_var(--glow-blue)]"
             />
           </motion.div>
         </div>
@@ -78,7 +78,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: reduced ? 0.05 : 0.6, delay: reduced ? 0 : 0.7 }}
-          className="mt-14 inline-flex flex-col items-center gap-2 text-text-secondary transition-colors hover:text-neon-green"
+          className="mt-14 inline-flex flex-col items-center gap-2 text-text-secondary transition-colors hover:text-neon-blue"
         >
           <span className="text-caption uppercase tracking-[0.3em]">{t('hero.scroll')}</span>
           {reduced ? (

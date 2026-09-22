@@ -1,15 +1,15 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { useTranslation } from '../../context/LanguageContext';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { ExperienceCard, type ExperienceEntry } from './ExperienceCard';
 
 const ROLE_KEYS = ['abadJaya', 'bitTech', 'kedata'];
-const NODE_ACCENTS = ['bg-neon-blue', 'bg-neon-green', 'bg-neon-pink'] as const;
+const NODE_ACCENTS = ['bg-neon-blue', 'bg-neon-blue', 'bg-neon-blue'] as const;
 const NODE_GLOWS = [
   'shadow-[0_0_16px_rgba(0,207,255,0.8)]',
-  'shadow-[0_0_16px_rgba(182,255,0,0.8)]',
-  'shadow-[0_0_16px_rgba(255,60,172,0.8)]',
+  'shadow-[0_0_16px_rgba(0,207,255,0.8)]',
+  'shadow-[0_0_16px_rgba(0,207,255,0.8)]',
 ] as const;
 
 interface TrackMeasure {
@@ -31,6 +31,45 @@ interface TrackMeasure {
 const TRAVEL_FROM = 0.1;
 const TRAVEL_TO = 0.9;
 
+interface JourneyCardProps {
+  entry: ExperienceEntry;
+  index: number;
+  /** track x position in pixels (MotionValue — updates without re-rendering) */
+  trackX: MotionValue<number>;
+  /** card center in track coordinates */
+  cx: number;
+  /** card width in pixels */
+  w: number;
+  /** viewport width in pixels */
+  vw: number;
+}
+
+/**
+ * JourneyCard — one card in the pinned row. Focus fade/scale derive straight
+ * from the track MotionValue, so scrolling never triggers a React re-render;
+ * only the compositor updates. (Opacity/scale math matches the previous
+ * state-driven version exactly.)
+ */
+function JourneyCard({ entry, index, trackX, cx, w, vw }: JourneyCardProps) {
+  const distance = useTransform(trackX, (v) => {
+    const center = -v + vw / 2;
+    return Math.min(1, Math.abs(cx - center) / (w || 1));
+  });
+  // Reproduce max(0.25, 1 - d*0.85): full fade across [0, ~0.88], floor after.
+  const opacity = useTransform(distance, [0, 0.88, 1], [1, 0.25, 0.25]);
+  // Reproduce max(0.9, 1 - d*0.1) exactly.
+  const scale = useTransform(distance, [0, 1], [1, 0.9]);
+
+  return (
+    <motion.div
+      style={{ opacity, scale }}
+      className="max-h-[82vh] w-[80vw] shrink-0 overflow-y-auto sm:w-[62vw] lg:w-[40vw]"
+    >
+      <ExperienceCard entry={entry} index={index} />
+    </motion.div>
+  );
+}
+
 /**
  * SECTION 03 — Professional Experience.
  * No nested scroll area: the card row is pinned (sticky) while vertical page
@@ -50,9 +89,14 @@ export function Experience() {
   const measureRef = useRef<TrackMeasure>({ offsets: [], widths: [], vw: 0, start: 0, end: 0 });
 
   const [active, setActive] = useState(0);
-  // focus[i] = 0 when card i is centered, up to 1 when a full card-width or more away.
-  const [focus, setFocus] = useState<number[]>(() => ROLE_KEYS.map((_, i) => (i === 0 ? 0 : 1)));
+  const activeRef = useRef(0);
   const [span, setSpan] = useState({ start: 0, end: 0 });
+  // Card geometry for the MotionValue fade (refreshed only on measure, not per frame).
+  const [geom, setGeom] = useState<{ cx: number[]; w: number[]; vw: number }>({
+    cx: [],
+    w: [],
+    vw: 0,
+  });
 
   const entries: ExperienceEntry[] = ROLE_KEYS.map((k) => ({
     org: t(`experience.roles.${k}.org`),
@@ -68,30 +112,32 @@ export function Experience() {
   });
   const x = useTransform(scrollYProgress, [TRAVEL_FROM, TRAVEL_TO], [span.start, span.end]);
 
-  const applyFocus = useCallback((trackX: number) => {
+  // Node highlight only: updates state solely when the nearest card CHANGES,
+  // so scrolling otherwise costs zero React renders.
+  useMotionValueEvent(x, 'change', (trackX) => {
     if (reducedRef.current) return;
     const m = measureRef.current;
     if (m.offsets.length === 0) return;
     const center = -trackX + m.vw / 2;
-    let bestIndex = 0;
+    let best = 0;
     let bestDist = Infinity;
-    const distances = m.offsets.map((cardCenter, i) => {
+    m.offsets.forEach((cardCenter, i) => {
       const dist = Math.abs(cardCenter - center);
       if (dist < bestDist) {
         bestDist = dist;
-        bestIndex = i;
+        best = i;
       }
-      return Math.min(1, dist / (m.widths[i] ?? 1));
     });
-    setFocus(distances);
-    setActive(bestIndex);
-  }, []);
-
-  useMotionValueEvent(x, 'change', applyFocus);
+    if (best !== activeRef.current) {
+      activeRef.current = best;
+      setActive(best);
+    }
+  });
 
   // Measure track geometry (offsets are layout values, unaffected by the x transform).
   // A ResizeObserver catches late changes (stylesheet parse, font swap, images);
-  // window load + fonts.ready cover the first paint.
+  // window load + fonts.ready cover the first paint. Refreshes geometry STATE
+  // (rare) — per-frame motion stays entirely inside MotionValues.
   useEffect(() => {
     let raf = 0;
     const measure = () => {
@@ -108,7 +154,7 @@ export function Experience() {
         const end = vw / 2 - offsets[offsets.length - 1];
         measureRef.current = { offsets, widths, vw, start, end };
         setSpan({ start, end });
-        applyFocus(x.get());
+        setGeom({ cx: offsets, w: widths, vw });
       });
     };
     measure();
@@ -124,7 +170,7 @@ export function Experience() {
       window.removeEventListener('load', measure);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang, reduced, applyFocus]);
+  }, [lang, reduced]);
 
   // Node click → scroll the PAGE to the point where card i is centered.
   const jumpToCard = useCallback(
@@ -170,7 +216,7 @@ export function Experience() {
           {i > 0 && (
             <span
               aria-hidden="true"
-              className="h-[2px] min-w-6 flex-1 bg-gradient-to-r from-neon-blue via-neon-green to-neon-pink opacity-40"
+                className="h-[2px] min-w-6 flex-1 bg-neon-blue opacity-40"
             />
           )}
           <button
@@ -202,21 +248,17 @@ export function Experience() {
           <div className="sticky top-0 flex h-screen flex-col justify-center gap-8 overflow-hidden">
             <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">{track}</div>
             <motion.div ref={trackRef} style={{ x }} className="relative flex items-stretch gap-5 px-[8vw]">
-              {entries.map((entry, i) => {
-                const distance = focus[i] ?? 0;
-                return (
-                  <div
-                    key={ROLE_KEYS[i]}
-                    style={{
-                      opacity: Math.max(0.25, 1 - distance * 0.85),
-                      transform: `scale(${Math.max(0.9, 1 - distance * 0.1)})`,
-                    }}
-                    className="max-h-[82vh] w-[80vw] shrink-0 overflow-y-auto sm:w-[62vw] lg:w-[40vw]"
-                  >
-                    <ExperienceCard entry={entry} index={i} />
-                  </div>
-                );
-              })}
+              {entries.map((entry, i) => (
+                <JourneyCard
+                  key={ROLE_KEYS[i]}
+                  entry={entry}
+                  index={i}
+                  trackX={x}
+                  cx={geom.cx[i] ?? 0}
+                  w={geom.w[i] ?? 1}
+                  vw={geom.vw}
+                />
+              ))}
             </motion.div>
           </div>
         </div>

@@ -18,7 +18,7 @@ interface SocialLinksProps {
 }
 
 /** Shared social icon-buttons (Contact section + Footer). All hrefs are placeholders. */
-export function SocialLinks({ size = 'md', glow = 'pink' }: SocialLinksProps) {
+export function SocialLinks({ size = 'md', glow = 'blue' }: SocialLinksProps) {
   const { t } = useTranslation();
   const glowCls = glow === 'blue' ? 'glass-glow-blue' : glow === 'green' ? 'glass-glow-green' : 'glass-glow-pink';
   const box = size === 'md' ? 'h-12 w-12 rounded-2xl' : 'h-10 w-10 rounded-xl';

@@ -20,7 +20,7 @@ export function Thanks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: reduced ? 0.05 : 0.5 }}
-          className="text-caption font-bold uppercase tracking-[0.35em] text-neon-green"
+          className="text-caption font-bold uppercase tracking-[0.35em] text-neon-blue"
         >
           {t('thanks.eyebrow')}
         </motion.p>

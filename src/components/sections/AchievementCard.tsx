@@ -18,8 +18,8 @@ const CATEGORY_META: Record<
   { glow: 'blue' | 'green' | 'pink'; text: string; dot: string; Icon: typeof Trophy }
 > = {
   placement: { glow: 'blue', text: 'text-neon-blue', dot: 'bg-neon-blue', Icon: Trophy },
-  ranking: { glow: 'green', text: 'text-neon-green', dot: 'bg-neon-green', Icon: Medal },
-  incubation: { glow: 'pink', text: 'text-neon-pink', dot: 'bg-neon-pink', Icon: FlaskConical },
+  ranking: { glow: 'blue', text: 'text-neon-blue', dot: 'bg-neon-blue', Icon: Medal },
+  incubation: { glow: 'blue', text: 'text-neon-blue', dot: 'bg-neon-blue', Icon: FlaskConical },
 };
 
 interface AchievementCardProps {
@@ -30,7 +30,7 @@ interface AchievementCardProps {
 /**
  * AchievementCard — one trophy-wall card.
  * Props: entry { title, organizer, year, category }, index (stagger offset).
- * Accent color is fixed per category: blue = placement, green = ranking, pink = incubation.
+ * Accent color is fixed per category, currently all blue (brand palette).
  */
 export function AchievementCard({ entry, index }: AchievementCardProps) {
   const { t } = useTranslation();

@@ -4,7 +4,6 @@ import { Check, ExternalLink } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { Button } from '../ui/Button';
-import { GlassPanel } from '../ui/GlassPanel';
 
 export interface ProjectEntry {
   name: string;
@@ -76,15 +75,17 @@ export function ProjectStoryBlock({ entry, index, animateOnView = true }: Projec
               }}
             />
           </div>
-          {/* Glass info overlay: role, duration, tech tags */}
-          <GlassPanel className="on-photo absolute inset-x-3 bottom-3 flex flex-wrap items-center gap-2 rounded-2xl px-4 py-3">
+          {/* Info overlay: solid (non-blurred) dark scrim. This panel translates
+              every scroll frame inside the stacking deck, and backdrop-blur
+              would force a full repaint per frame — the flat scrim reads the same. */}
+          <div className="on-photo absolute inset-x-3 bottom-3 flex flex-wrap items-center gap-2 rounded-2xl border px-4 py-3">
             <span className="text-caption font-bold uppercase tracking-widest text-text-primary">
               {entry.role}
             </span>
             <span aria-hidden="true" className="text-text-secondary">
               ·
             </span>
-            <span className="text-caption font-bold uppercase tracking-widest text-neon-green">
+            <span className="text-caption font-bold uppercase tracking-widest text-neon-blue">
               {entry.duration}
             </span>
             <span className="flex w-full flex-wrap gap-1.5 pt-1">
@@ -97,7 +98,7 @@ export function ProjectStoryBlock({ entry, index, animateOnView = true }: Projec
                 </span>
               ))}
             </span>
-          </GlassPanel>
+          </div>
         </div>
       </div>
 
