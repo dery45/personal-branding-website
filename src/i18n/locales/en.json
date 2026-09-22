@@ -20,7 +20,7 @@
   },
   "motto": {
     "eyebrow": "My Principle",
-    "text": "I stand by what I say, because that's my ninja way."
+    "text": "I stand by what I say, because that's my way of life."
   },
   "experience": {
     "eyebrow": "Career Path",
@@ -166,20 +166,196 @@
   "portfolio": {
     "eyebrow": "Visual Archive",
     "title": "Portfolio Showcase",
-    "note": "Placeholder previews — final artwork drops in here.",
     "viewPdf": "View case study (PDF)",
     "viewPortfolio": "View portfolio file",
+    "viewDeck": "View pitch deck",
+    "viewBehance": "View on Behance",
+    "viewWebsite": "Visit website",
     "filters": {
       "all": "All",
       "websites": "Websites",
       "dashboards": "Dashboards",
       "uiux": "UI/UX Mockups",
-      "mobile": "Mobile Apps",
+      "ai": "AI",
       "dataviz": "Data Visualization",
       "product": "Product Design"
     },
     "items": {
-      "websites": { "title": "Website Concept 01", "alt": "Placeholder website screenshot" },
+      "jaghut": {
+        "title": "JagHut",
+        "alt": "JagHut project cover",
+        "name": "JagHut",
+        "year": "2026",
+        "team": "BUTeam",
+        "description": [
+          "JagHut is an OSINT-based environmental intelligence platform that combines data, AI technology, and community contributions to help independently verify corporate sustainability claims.",
+          "By integrating Forest IQ data, real-time AI analysis, and reports submitted by local communities, JagHut provides transparent, data-driven, and traceable insights into environmental issues.",
+          "JagHut was developed as a solution for the Peduli Hutan Hackathon organized by Telkomsel."
+        ]
+      },
+      "sugi": {
+        "title": "SUGI AI",
+        "alt": "SUGI Ecosystem cover",
+        "name": "SUGI AI",
+        "year": "2026",
+        "team": "BUTeam",
+        "description": [
+          "SUGI Ecosystem is an integrated agricultural AI ecosystem that connects four core components into a unified intelligence engine. SUGI AI Core serves as an intelligent assistant powered by Hybrid RAG (BM25, Vector Search, and Cross-Encoder) and runs on-premise through Ollama, supporting data sovereignty while reducing dependency on recurring third-party AI services.",
+          "SUGIDash is a MERN Stack-based analytics dashboard designed for three user groups: Farmers, Management, and Government. It provides food security datasets, agricultural lifecycle tracking, and real-time financial and KPI monitoring. SUGI PWA complements the ecosystem with a mobile-first, offline-first application that enables rapid field data recording in areas with limited connectivity.",
+          "These components are connected through the Daily Insight Engine, which transforms operational data and user interactions into structured insights. The system is designed to support agricultural monitoring, government Early Warning Systems, and risk identification and mitigation for relevant stakeholders."
+        ]
+      },
+      "uangku": {
+        "title": "Uangku",
+        "alt": "Uangku project cover",
+        "name": "Uangku",
+        "year": "2025",
+        "team": "BUTeam",
+        "description": [
+          "Uangku is a web-based personal finance assistant designed to help users manage their income, expenses, budgeting, emergency funds, and investments in one platform.",
+          "Powered by Uangku Advisor AI, the platform provides real-time financial guidance and insights through technical and fundamental analysis, helping users better understand investment options based on their financial circumstances and goals.",
+          "Uangku was developed as a solution for the BI-OJK Hackathon 2025. Although the project did not advance to the next stage, it provided an opportunity to explore the application of AI in personal financial management and investment decision-making."
+        ]
+      },
+      "point": {
+        "title": "Point Property Solo",
+        "alt": "Point Property Solo project cover",
+        "name": "Point Property Solo",
+        "year": "2025",
+        "team": "PT Abad Jaya Senantiasa",
+        "description": [
+          "Point Property is a property marketplace platform that helps users discover various types of properties, including houses, boarding houses, and rental properties across Solo Raya, Central Java, and surrounding areas. This project was carried out for PT Abad Jaya Senantiasa, with Point Property Solo as the client.",
+          "For this project, I was involved in the UI/UX redesign process to improve the overall experience of discovering, browsing, and managing property information. The redesign covered the main website, mobile web experience, and admin dashboard, addressing both end-user and platform management needs."
+        ]
+      },
+      "bkd": {
+        "title": "Computer Assessment Test - BKD Jakarta",
+        "alt": "BKD Jakarta assessment platform cover",
+        "name": "Computer Assessment Test - BKD Jakarta",
+        "year": "2025",
+        "team": "testrek Asesmen",
+        "description": [
+          "CAT is a web-based assessment platform designed to help the DKI Jakarta Regional Personnel Agency manage potential assessment tests in a more structured and efficient way. The system covers test package management, question items, scoring and assessment norms, participant data, assessment scheduling, and monitoring of assessment progress and results.",
+          "The project was developed using React.js, Express.js, Node.js, and OracleDB, with the goal of providing administrators with a centralized assessment management workflow while giving respondents a simple and reliable way to access and complete their scheduled assessments."
+        ]
+      },
+      "bkdcilacap": {
+        "title": "Computer Assessment Test - BKD Cilacap",
+        "alt": "BKD Cilacap assessment platform cover",
+        "name": "Computer Assessment Test - BKD Cilacap",
+        "year": "2025",
+        "team": "testrek Asesmen",
+        "description": [
+          "CAT is a web-based assessment platform designed to help the Cilacap Regional Personnel Agency manage potential assessment tests in a more structured and efficient way. The system covers test package management, question items, scoring and assessment norms, participant data, assessment scheduling, and monitoring of assessment progress and results.",
+          "The project was developed using React.js, Express.js, Node.js, and OracleDB, with the goal of providing administrators with a centralized assessment management workflow while giving respondents a simple and reliable way to access and complete their scheduled assessments."
+        ]
+      },
+      "uiux": {
+        "title": "CuanCraft — UX Case Study",
+        "alt": "CuanCraft UX case study cover",
+        "name": "Cuancraft",
+        "year": "2024",
+        "team": "WeKreativa",
+        "description": [
+          "This project was originally developed for the Bank Rakyat Indonesia Hackathon, which focused on financial literacy, together with the WeKreativa team.",
+          "Through this project, we aimed to address the issue of low financial literacy among Indonesian society, which can make people more vulnerable to online gambling, illegal or excessive use of online loans, and making investment decisions driven by the Fear of Missing Out (FOMO).",
+          "To address these challenges, we developed Cuancraft, a gamification-based financial literacy platform designed to make financial concepts more interactive, engaging, and easier to understand. In addition to its educational features, Cuancraft also provides financial management tools that help users apply what they learn to their everyday financial decisions."
+        ]
+      },
+      "mylifeco": {
+        "title": "MyLifeCo",
+        "alt": "MyLifeCo project cover",
+        "name": "MyLifeCo",
+        "year": "2024",
+        "team": "BUTeam",
+        "description": [
+          "MyLifeCo is an application and integrated feature within Mobile JKN designed to help users monitor their food intake and develop healthier eating habits. By scanning a product's QR code or barcode, users can instantly access nutritional information tailored to their needs. Supported by educational content and an interactive chatbot, MyLifeCo helps users better understand their dietary patterns and supports the management of diabetes and chronic kidney disease (CKD)."
+        ]
+      },
+      "langkahmu": {
+        "title": "Langkahmu",
+        "alt": "Langkahmu project cover",
+        "name": "Langkahmu",
+        "year": "2023",
+        "team": "WeKreativa",
+        "description": [
+          "Langkahmu is a mobile application designed to help students, university students, and job seekers plan their educational and career journeys.",
+          "Users can explore various fields of interest, including career opportunities, schools and universities, as well as potential career paths and development opportunities. The application also provides a career assessment to help users identify fields that align with their interests and potential.",
+          "Based on the assessment results, users receive a personalized career roadmap and educational recommendations to help them take the right steps toward their career goals."
+        ]
+      },
+      "tom": {
+        "title": "Analisa Social Media Tom MC Ifle",
+        "alt": "Tom MC Ifle social media analysis cover",
+        "name": "Analisa Social Media Tom MC Ifle",
+        "year": "2023",
+        "team": "CV Bit Technology",
+        "description": [
+          "This project focused on analyzing the social media performance of Tom MC Ifle across Instagram and YouTube. The analysis covered various metrics, including likes, engagement, comments, and other interaction indicators to evaluate content performance and audience response."
+        ]
+      },
+      "procastination": {
+        "title": "Procastination",
+        "alt": "Procastination project cover",
+        "name": "Procastination",
+        "year": "2022",
+        "team": "CV Bit Technology",
+        "description": [
+          "Procastination is a podcast based in Yogyakarta that provides an open space for sharing stories, discussing ideas, and exchanging perspectives on various topics.",
+          "For this project, I was responsible for developing Procastination's company profile website as a digital platform to showcase the podcast and its activities. The website was built using HTML, CSS, JavaScript, and Bootstrap."
+        ]
+      },
+      "indomabs": {
+        "title": "Indomabs",
+        "alt": "Indomabs project cover",
+        "name": "Indomabs",
+        "year": "2022",
+        "team": "CV Bit Technology",
+        "description": [
+          "Indomabs is an Indonesian biotechnology startup specializing in custom antibody design and production. The company aims to provide affordable development services while delivering reliable results for its customers.",
+          "In this project, I was responsible for developing Indomabs' company profile website as a digital platform to showcase the company's services, capabilities, and identity. The website was built using HTML, CSS, JavaScript, and Bootstrap."
+        ]
+      },
+      "indochain": {
+        "title": "IndoChain",
+        "alt": "IndoChain project cover",
+        "name": "IndoChain",
+        "year": "2021",
+        "team": "CV Bit Technology",
+        "description": [
+          "Indochain is a decentralized blockchain-based application designed to improve the security and transparency of the COVID-19 vaccine supply chain while helping reduce the risk of counterfeit vaccines. The project was developed during 2020–2021, when the need for secure and traceable vaccine distribution systems was particularly important.",
+          "Indochain was developed for various hackathons and innovation programs, achieving recognitions across placements, rankings, and incubation."
+        ],
+        "highlights": [
+          "1st Place — Indigo Hackathon Festival",
+          "1st Place — Hackdata Indosat Ooredoo Virtual Hackathon",
+          "Runner-up — Entrepreneur Empowerment DKI Jakarta / Jakbee",
+          "Top 25 — Innovation Challenge and Business Summit IKA ITS",
+          "Incubatee — DSLaunchpad 2.0"
+        ]
+      },
+      "politisimeter": {
+        "title": "Politisimeter",
+        "alt": "Politisimeter project cover",
+        "name": "Politisimeter",
+        "year": "2020",
+        "team": "PT. Kedata Indonesia Digital",
+        "description": [
+          "Politismeter is a political consulting company under PT Kedata Indonesia Digital that leverages political science, social sciences, computer science, and data science to collect and analyze data and generate insights into strategic political issues.",
+          "In this project, I was responsible for developing Politismeter's company profile website as a digital platform to showcase the company's services, capabilities, and identity. The website was built using HTML, CSS, JavaScript, and Bootstrap."
+        ]
+      },
+      "analisacafe": {
+        "title": "Analisa Cafe Kopi Solo",
+        "alt": "Analisa Cafe Kopi Solo cover",
+        "name": "Analisa Cafe Kopi Solo",
+        "year": "2020",
+        "team": "PT Kedata Indonesia Digital",
+        "description": [
+          "This project focused on collecting and analyzing competitive data from five cafés in Solo: Cafe Baca Canarisla as the main client of PT Kedata Indonesia Digital, along with its competitors, Moju Moju, Serujuk Coffee, Solo Kopi, and The Tower Space.",
+          "Data was collected through scraping Instagram, Google Maps Reviews, and GoFood, covering the observation period from February 1 to July 17, 2020. Data processing and analysis were conducted using R and Python to identify insights into the performance and positioning of each café."
+        ]
+      },
       "jagad": {
         "title": "Jagad Agro Wonoboyo",
         "alt": "Jagad Agro Wonoboyo project cover",
@@ -191,7 +367,6 @@
           "By implementing smart farming technologies, the project aims to improve the efficiency, productivity, and sustainability of local agricultural practices. The initiative is expected to provide practical benefits for farmers while supporting the broader economic and social development of the Wonoboyo Village community."
         ]
       },
-      "dashboards": { "title": "Dashboard Interface 01", "alt": "Placeholder dashboard interface" },
       "uiux": {
         "title": "CuanCraft — UX Case Study",
         "alt": "CuanCraft UX case study cover",
@@ -215,9 +390,18 @@
           "For this project, I was involved in the UI/UX redesign process to improve the overall experience of discovering, browsing, and managing property information. The redesign covered the main website, mobile web experience, and admin dashboard, addressing both end-user and platform management needs."
         ]
       },
-      "mobile": { "title": "Mobile App Interface 01", "alt": "Placeholder mobile app interface" },
-      "dataviz": { "title": "Data Visualization 01", "alt": "Placeholder data visualization piece" },
-      "product": { "title": "Product Design Exploration 01", "alt": "Placeholder product design exploration" }
+      "jaghut": {
+        "title": "JagHut",
+        "alt": "JagHut project cover",
+        "name": "JagHut",
+        "year": "2026",
+        "team": "BUTeam",
+        "description": [
+          "JagHut is an OSINT-based environmental intelligence platform that combines data, AI technology, and community contributions to help independently verify corporate sustainability claims.",
+          "By integrating Forest IQ data, real-time AI analysis, and reports submitted by local communities, JagHut provides transparent, data-driven, and traceable insights into environmental issues.",
+          "JagHut was developed as a solution for the Peduli Hutan Hackathon organized by Telkomsel."
+        ]
+      }
     },
     "lightbox": { "close": "Close" }
   },
@@ -226,7 +410,6 @@
     "title": "Contact",
     "intro": "Have a project, role, or collaboration in mind? My inbox is open.",
     "socialTitle": "Find me on",
-    "socialNote": "Profile links coming soon — placeholders until real URLs are supplied.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your full name",

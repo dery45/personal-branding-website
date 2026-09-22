@@ -1,6 +1,6 @@
 # Dery Andrian Pratama — Personal Branding Website
 
-Single-page personal branding site for **Dery Andrian Pratama, IT Project Manager & Technical Product Designer** (Yogyakarta, Indonesia). Ten sections on one scrolling page — Hero, Motto, Experience, Projects, Education, Achievements, Portfolio, Contact, Thank-You, Footer — with dark/light themes, English/Indonesian language toggle, glassmorphism design system, and scroll-aware motion throughout. **Frontend-only**: no backend, no database, no server code.
+Single-page personal branding site for **Dery Andrian Pratama, IT Project Manager & Technical Product Designer** (Yogyakarta, Indonesia). Ten sections on one scrolling page — Hero, Motto ("I stand by what I say, because that's my way of life."), Experience, Projects, Education, Achievements, Portfolio, Contact, Thank-You, Footer — with dark/light themes, English/Indonesian language toggle, glassmorphism design system, and scroll-aware motion throughout. **Frontend-only**: no backend, no database, no server code.
 
 ## Tech stack
 
@@ -23,31 +23,39 @@ npm run preview # serve the production build locally
 ```
 src/
   components/
-    layout/   Navbar, SplashScreen, ScrollProgress, SectionWrapper, Footer, Thanks? (no — sections/)
+    layout/   Navbar, SplashScreen, ScrollProgress, SectionWrapper, Footer
     ui/       GlassPanel (GlassPanel/GlassCard), Button, ThemeToggle, LanguageToggle, SocialLinks
-    sections/ Hero, PersonalMotto, Experience (+ExperienceCard), Projects (+ProjectStoryBlock),
-              Education, Achievements (+AchievementCard), Portfolio (+PortfolioTile, Lightbox),
-              Contact (+ContactForm), Thanks
+    sections/ Hero, PersonalMotto, Experience (+ExperienceCard), Projects (+ProjectStoryBlock,
+              ProjectStackCards), Education, Achievements (+AchievementCard),
+              Portfolio (+PortfolioTile, Lightbox), Contact (+ContactForm), Thanks
   context/    ThemeContext, LanguageContext (useTranslation: t() + ta() for arrays)
   hooks/      useReducedMotion, useScrollProgress, useContactForm
   i18n/locales/ en.json, id.json (namespaced section.key)
-  styles/     globals.css (tokens, .glass/.glass-flat/.on-photo, focus ring, grain)
-public/images/ hero|experience|projects|education|achievements|portfolio|social/
+  styles/     globals.css (tokens, .glass/.glass-flat/.on-photo/.motto-fade, focus ring, grain)
+public/images/ hero|projects/education/achievements/social/ (legacy placeholder SVGs)
+src/assets/images/ hero portrait, parallax background, porfolio cover/ (real artwork, Vite-bundled)
 ```
 
 Above-the-fold sections (Hero, Motto) load eagerly; all other sections plus the Lightbox are `React.lazy` code-split chunks.
 
+## Design system (quick reference)
+
+- Type: Playfair Display for titles/headings/quotes, Source Sans Pro for body/nav/buttons. Tektur appears in exactly two places — the navbar brand mark and the hero name.
+- Color: blue accent only (`--neon-blue`; green/pink tokens remain defined but unused). Motto quote uses `--motto-ink`.
+- Glass: `.glass` for static nav/cards/modals, `.glass-flat` for surfaces that animate every scroll frame (translating blurred layers forces a repaint per frame), `.on-photo` for text over imagery.
+
 ## Adding real assets
 
-Drop files at the documented paths (keep the same aspect ratios to avoid layout shift):
+All artwork is real and bundled via Vite imports — no placeholders remain in the gallery:
 
-| Slot | Path | Size |
+| Slot | Path | Notes |
 |---|---|---|
-| Portrait | `public/images/hero/portrait-placeholder.jpg` | 600×800 (3:4) |
-| Projects | `public/images/projects/<slug>-placeholder.jpg` | 800×500 (16:10), slugs: `jagad-agro`, `mylifeco`, `suge-pos`, `indochain` |
-| Portfolio | `public/images/portfolio/<category>-placeholder.jpg` | 600×450 (4:3), categories: `websites`, `dashboards`, `uiux`, `mobile`, `dataviz`, `product` |
+| Portrait | `src/assets/images/Main-Images_Dery Andrian Pratama.png` | 943×1286, `fetchPriority="high"` in Hero |
+| Motto backdrop | `src/assets/images/parallax-background-1920.jpg` | web-sized copy of the 4K original |
+| Portfolio covers | `src/assets/images/porfolio cover/<Name>-Cover.png` (~1440px+ wide) | one tile per item, `categories[]` drives filter matching, `details` + file link power the case modal |
+| Project stories | reuse the portfolio covers (single source of truth; Suge POS stays `hidden: true`) | `Projects.tsx` |
 
-Each `.jpg` has an SVG sibling as automatic fallback (swapped in via `onError`), plus a dev-only "Add portrait here" outline on the hero slot. Also update `og:image` in `index.html` once a real cover exists.
+Also update `og:image` in `index.html` once a real social cover exists (still a placeholder).
 
 ## Configuring the contact form (Netlify Forms)
 
@@ -57,8 +65,11 @@ hidden static mirror in `index.html` (field `name`s must stay in sync).
 A honeypot (`bot-field`) handles spam. Steps:
 
 1. Deploy the built site on Netlify (forms are only captured there).
-2. In local dev, a successful fetch just exercises the idle → loading → success UI.
-3. Check submissions in the Netlify dashboard under Forms.
+2. Submit the form once so Netlify registers it.
+3. To receive submissions at **deryap.dap@gmail.com**: Site Settings → Forms →
+   Form notifications → Add notification → Email notification → enter the
+   address → save. Check submissions in the Netlify dashboard under Forms.
+4. In local dev, a successful fetch just exercises the idle → loading → success UI.
 
 ## Theme / language
 
@@ -67,5 +78,6 @@ A honeypot (`bot-field`) handles spam. Steps:
 
 ## Placeholder vs. real content
 
-**Placeholder (must be replaced):** all project/portfolio images (`*-placeholder.*`), all five social links (`href="#"` + `data-placeholder="true"` in `src/components/ui/SocialLinks.tsx`, shared by Contact + Footer), `og:image`.
-**Real:** hero portrait, all Experience/Projects/Education/Achievements facts, dates, titles, outcomes, and both GitHub source URLs — do not alter or invent beyond them.
+**Live:** all 16 portfolio items with real covers, hero portrait, real social URLs (Instagram/LinkedIn/Gmail/Behance/GitHub), project story images (shared with portfolio), contact form (Netlify).
+**Still placeholder:** `og:image` social cover, Suge POS story (hidden via flag, data kept).
+**Real (do not alter or invent beyond):** all Experience/Projects/Education/Achievements facts, dates, titles, outcomes, and GitHub source URLs.

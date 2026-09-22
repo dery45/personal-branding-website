@@ -6,6 +6,8 @@ export interface PortfolioCaseDetails {
   year: string;
   team: string;
   description: string[];
+  /** optional achievement bullets (e.g. hackathon placements) rendered as a checklist */
+  highlights?: string[];
 }
 
 export interface PortfolioEntry {
@@ -47,7 +49,6 @@ export function PortfolioTile({ entry, index, onOpen }: PortfolioTileProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: reduced ? 0.05 : 0.45, delay: reduced ? 0 : (index % 3) * 0.08 }}
-      className="mb-5 break-inside-avoid"
     >
       <button
         type="button"

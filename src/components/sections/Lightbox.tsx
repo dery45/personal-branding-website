@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ExternalLink, X } from 'lucide-react';
+import { Check, ExternalLink, X } from 'lucide-react';
 import { useTranslation } from '../../context/LanguageContext';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { Button } from '../ui/Button';
@@ -115,6 +115,16 @@ export function Lightbox({ entry, onClose }: LightboxProps) {
                       </p>
                     ))}
                   </div>
+                  {entry.details.highlights && entry.details.highlights.length > 0 && (
+                    <ul className="mt-4 space-y-2">
+                      {entry.details.highlights.map((h, i) => (
+                        <li key={i} className="flex gap-2.5 text-body text-text-secondary">
+                          <Check size={17} aria-hidden="true" className="mt-1 shrink-0 text-neon-blue" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   {entry.pdf && (
                     <div className="mt-6">
                       <Button

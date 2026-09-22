@@ -17,6 +17,14 @@ const inputCls =
  * static <form name="contact"> mirror in index.html — the field `name`
  * attributes must stay in sync between the two. Real delivery only happens on
  * a Netlify deployment; in local dev a successful fetch just exercises the UI.
+ *
+ * EMAIL DELIVERY SETUP (Netlify dashboard — no code involved, the recipient
+ * cannot be set from the repo):
+ * 1. Deploy the site on Netlify and submit the form once (registers it).
+ * 2. Open Site Settings → Forms → Form notifications → Add notification.
+ * 3. Choose "Email notification", enter deryap.dap@gmail.com, save.
+ * New submissions then land in that inbox (verified sender required by
+ * Netlify for the notification email itself).
  */
 export function ContactForm() {
   const { t } = useTranslation();

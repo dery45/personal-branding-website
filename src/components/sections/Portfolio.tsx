@@ -7,6 +7,19 @@ import { PortfolioTile, type PortfolioEntry } from './PortfolioTile';
 import cuancraftCover from '../../assets/images/porfolio cover/cuancraft-UX Case study-Cover.png';
 import jagoCover from '../../assets/images/porfolio cover/JAGO-COVER.png';
 import pointCover from '../../assets/images/porfolio cover/Point-property Cover.png';
+import mylifecoCover from '../../assets/images/porfolio cover/MyLifeCo-Cover.png';
+import langkahmuCover from '../../assets/images/porfolio cover/Langkahmu-Cover.png';
+import jaghutCover from '../../assets/images/porfolio cover/JagHut Cover.png';
+import bkdCover from '../../assets/images/porfolio cover/BKD-Jakarta-Cover.png';
+import bkdCilacapCover from '../../assets/images/porfolio cover/BKD-Cilacap Cover.png';
+import uangkuCover from '../../assets/images/porfolio cover/Uangku-Cover.png';
+import politisimeterCover from '../../assets/images/porfolio cover/politismeter-cover.png';
+import procastinationCover from '../../assets/images/porfolio cover/Procas-cover.png';
+import indomabsCover from '../../assets/images/porfolio cover/Indomabs-cover.png';
+import sugiCover from '../../assets/images/porfolio cover/SUGI-Cover.png';
+import analisaCafeCover from '../../assets/images/porfolio cover/Analisa-cafe-cover.png';
+import tomCover from '../../assets/images/porfolio cover/Report-Tom-Cover.png';
+import indochainCover from '../../assets/images/porfolio cover/indochain-cover.png';
 
 // Case-study files are hosted on Google Drive (not bundled).
 const CUANCRAFT_PDF_URL =
@@ -15,11 +28,30 @@ const JAGAD_DRIVE_URL =
   'https://drive.google.com/file/d/1-86mP4OLNjsMoTBSzOjhhdZZ3-mnV0yZ/view?usp=sharing';
 const POINT_DRIVE_URL =
   'https://drive.google.com/file/d/1uUgzXAprqxZ-pQK4JOZj-UMj3Q392IRO/view?usp=sharing';
+const MYLIFECO_DECK_URL =
+  'https://drive.google.com/file/d/1NoIcelhL0M-9xhnBrk1Wf8XUZkUAe0Kk/view?usp=sharing';
+const LANGKAHMU_BEHANCE_URL = 'https://www.behance.net/gallery/208940999/Langkahmu-Career-Planning-Education-Pathway-App';
+const JAGHUT_DRIVE_URL =
+  'https://drive.google.com/file/d/14pNDpcia8ewW9PR6st_5_WeldTkoENpS/view?usp=sharing';
+const BKD_DRIVE_URL =
+  'https://drive.google.com/file/d/1RGhx-AZaMBmJUJ5Kjy8v1mJbf07OsiDN/view?usp=sharing';
+const UANGKU_DRIVE_URL =
+  'https://drive.google.com/file/d/18XdIuSZBk37GtVs_xVjmwMl1Goc0jEG6/view?usp=sharing';
+const POLITISIMETER_URL = 'https://politisimeter.netlify.app/';
+const PROCASTINATION_URL = 'https://procastination.netlify.app/';
+const INDOMABS_URL = 'https://indomaps.netlify.app/';
+const SUGI_URL = 'https://sugiecosystem.cloud/';
+const ANALISA_CAFE_DRIVE_URL =
+  'https://drive.google.com/file/d/1EwFMfEx1iOazJFAqnlWrwmlIQk2Epdg0/view?usp=sharing';
+const TOM_DRIVE_URL =
+  'https://drive.google.com/file/d/1jndg5zwB1zd_wU4TJ6SpE1kglggpADJW/view?usp=sharing';
+const INDOCHAIN_DRIVE_URL =
+  'https://drive.google.com/file/d/1PmXBGaWpD8IC28y1bW7T5gLvyfZ5m3QF/view?usp=sharing';
 
 // Lightbox is only needed after a tap — keep it out of the initial bundle.
 const Lightbox = lazy(() => import('./Lightbox').then((m) => ({ default: m.Lightbox })));
 
-const CATEGORIES = ['websites', 'dashboards', 'uiux', 'mobile', 'dataviz', 'product'];
+const CATEGORIES = ['websites', 'dashboards', 'uiux', 'ai', 'dataviz', 'product'];
 
 /**
  * SECTION 07 — Portfolio Showcase (visual-first browsing only; no repeated Section 04 copy).
@@ -32,77 +64,51 @@ export function Portfolio() {
   const [filter, setFilter] = useState('all');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  // Gallery is sorted newest-first by project year; every tile is real work —
+  // no placeholders remain. Each entry declares all filter categories it spans.
   const entries: PortfolioEntry[] = useMemo(() => {
-    const placeholder = (c: string): PortfolioEntry => ({
-      id: `placeholder-${c}`,
-      title: t(`portfolio.items.${c}.title`),
-      category: c,
-      categoryLabel: t(`portfolio.filters.${c}`),
-      categories: [c],
-      image: `/images/portfolio/${c}-placeholder.jpg`,
-      fallbackImage: `/images/portfolio/${c}-placeholder.svg`,
-      alt: t(`portfolio.items.${c}.alt`),
+    const item = (
+      id: string,
+      key: string,
+      primary: string,
+      categories: string[],
+      image: string,
+      pdf?: string,
+      pdfLabel?: string,
+    ): PortfolioEntry => ({
+      id,
+      title: t(`portfolio.items.${key}.title`),
+      category: primary,
+      categoryLabel: t(`portfolio.filters.${primary}`),
+      categories,
+      image,
+      alt: t(`portfolio.items.${key}.alt`),
+      ...(pdf ? { pdf, pdfLabel } : {}),
+      details: {
+        name: t(`portfolio.items.${key}.name`),
+        year: t(`portfolio.items.${key}.year`),
+        team: t(`portfolio.items.${key}.team`),
+        description: ta(`portfolio.items.${key}.description`),
+        highlights: ta(`portfolio.items.${key}.highlights`),
+      },
     });
     return [
-      placeholder('websites'),
-      placeholder('dashboards'),
-      {
-        // Real portfolio item: CuanCraft UX case study (cover + details + Drive PDF).
-        id: 'cuancraft',
-        title: t('portfolio.items.uiux.title'),
-        category: 'uiux',
-        categoryLabel: t('portfolio.filters.uiux'),
-        categories: ['uiux'],
-        image: cuancraftCover,
-        alt: t('portfolio.items.uiux.alt'),
-        pdf: CUANCRAFT_PDF_URL,
-        details: {
-          name: t('portfolio.items.uiux.name'),
-          year: t('portfolio.items.uiux.year'),
-          team: t('portfolio.items.uiux.team'),
-          description: ta('portfolio.items.uiux.description'),
-        },
-      },
-      {
-        // Real portfolio item: Jagad Agro Wonoboyo — spans website, dashboard,
-        // UI/UX and product design (PM + UI/UX + full-stack role).
-        id: 'jagad-agro',
-        title: t('portfolio.items.jagad.title'),
-        category: 'websites',
-        categoryLabel: t('portfolio.filters.websites'),
-        categories: ['websites', 'dashboards', 'uiux', 'product'],
-        image: jagoCover,
-        alt: t('portfolio.items.jagad.alt'),
-        pdf: JAGAD_DRIVE_URL,
-        pdfLabel: t('portfolio.viewPortfolio'),
-        details: {
-          name: t('portfolio.items.jagad.name'),
-          year: t('portfolio.items.jagad.year'),
-          team: t('portfolio.items.jagad.team'),
-          description: ta('portfolio.items.jagad.description'),
-        },
-      },
-      placeholder('mobile'),
-      placeholder('dataviz'),
-      {
-        // Real portfolio item: Point Property Solo (UI/UX redesign) + Drive file.
-        id: 'point-property',
-        title: t('portfolio.items.point.title'),
-        category: 'uiux',
-        categoryLabel: t('portfolio.filters.uiux'),
-        categories: ['uiux'],
-        image: pointCover,
-        alt: t('portfolio.items.point.alt'),
-        pdf: POINT_DRIVE_URL,
-        pdfLabel: t('portfolio.viewPortfolio'),
-        details: {
-          name: t('portfolio.items.point.name'),
-          year: t('portfolio.items.point.year'),
-          team: t('portfolio.items.point.team'),
-          description: ta('portfolio.items.point.description'),
-        },
-      },
-      placeholder('product'),
+      { ...item('jaghut', 'jaghut', 'websites', ['websites', 'dashboards', 'ai', 'product'], jaghutCover, JAGHUT_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('sugi', 'sugi', 'websites', ['websites', 'uiux', 'ai', 'product'], sugiCover, SUGI_URL, t('portfolio.viewWebsite')) },
+      { ...item('uangku', 'uangku', 'uiux', ['uiux', 'product'], uangkuCover, UANGKU_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('point-property', 'point', 'uiux', ['uiux'], pointCover, POINT_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('bkd-cat', 'bkd', 'dashboards', ['dashboards', 'websites', 'uiux'], bkdCover, BKD_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('bkd-cilacap', 'bkdcilacap', 'dashboards', ['dashboards', 'websites'], bkdCilacapCover) },
+      { ...item('cuancraft', 'uiux', 'uiux', ['uiux'], cuancraftCover, CUANCRAFT_PDF_URL, t('portfolio.viewPdf')) },
+      { ...item('mylifeco', 'mylifeco', 'uiux', ['uiux', 'product'], mylifecoCover, MYLIFECO_DECK_URL, t('portfolio.viewDeck')) },
+      { ...item('jagad-agro', 'jagad', 'websites', ['websites', 'dashboards', 'uiux', 'product'], jagoCover, JAGAD_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('langkahmu', 'langkahmu', 'uiux', ['uiux', 'product'], langkahmuCover, LANGKAHMU_BEHANCE_URL, t('portfolio.viewBehance')) },
+      { ...item('tom', 'tom', 'dataviz', ['dataviz'], tomCover, TOM_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('procastination', 'procastination', 'websites', ['websites'], procastinationCover, PROCASTINATION_URL, t('portfolio.viewWebsite')) },
+      { ...item('indomabs', 'indomabs', 'websites', ['websites'], indomabsCover, INDOMABS_URL, t('portfolio.viewWebsite')) },
+      { ...item('indochain', 'indochain', 'product', ['product'], indochainCover, INDOCHAIN_DRIVE_URL, t('portfolio.viewPortfolio')) },
+      { ...item('politisimeter', 'politisimeter', 'websites', ['websites'], politisimeterCover, POLITISIMETER_URL, t('portfolio.viewWebsite')) },
+      { ...item('analisacafe', 'analisacafe', 'dataviz', ['dataviz'], analisaCafeCover, ANALISA_CAFE_DRIVE_URL, t('portfolio.viewPortfolio')) },
     ];
   }, [t, ta]);
 
@@ -134,7 +140,6 @@ export function Portfolio() {
         <h2 id="portfolio-heading" className="font-display mt-3 text-display-lg font-extrabold text-text-primary">
           {t('portfolio.title')}
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-body text-text-secondary">{t('portfolio.note')}</p>
       </motion.div>
 
       {/* Filter chips */}
@@ -159,7 +164,7 @@ export function Portfolio() {
         })}
       </div>
 
-      <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((entry, i) => (
           <PortfolioTile
             key={entry.id}

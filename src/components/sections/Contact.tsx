@@ -42,7 +42,6 @@ export function Contact() {
           <div className="mt-4 flex flex-wrap justify-center gap-3">
             <SocialLinks size="md" glow="blue" />
           </div>
-          <p className="mt-4 max-w-xs text-caption text-text-secondary">{t('contact.socialNote')}</p>
         </aside>
       </div>
     </SectionWrapper>

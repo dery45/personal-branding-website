@@ -3,6 +3,10 @@ import { useTranslation } from '../../context/LanguageContext';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { ProjectStoryBlock, type ProjectEntry } from './ProjectStoryBlock';
 import { ProjectStackCards } from './ProjectStackCards';
+// Story images reuse the portfolio covers (single source of truth).
+import jagoCover from '../../assets/images/porfolio cover/JAGO-COVER.png';
+import mylifecoCover from '../../assets/images/porfolio cover/MyLifeCo-Cover.png';
+import indochainCover from '../../assets/images/porfolio cover/indochain-cover.png';
 
 interface ProjectDatum {
   key: string;
@@ -10,20 +14,22 @@ interface ProjectDatum {
   image: string;
   fallbackImage: string;
   sourceUrl?: string;
+  /** hidden entries stay in the data (not deleted) but render nothing */
+  hidden?: boolean;
 }
 
 const PROJECTS: ProjectDatum[] = [
   {
     key: 'jagadAgro',
     tech: ['MERN', 'Figma', 'PRD', 'Team Leadership'],
-    image: '/images/projects/jagad-agro-placeholder.jpg',
+    image: jagoCover,
     fallbackImage: '/images/projects/jagad-agro-placeholder.svg',
     sourceUrl: 'https://github.com/marcellitovt/jagat-agro-wonoboyo',
   },
   {
     key: 'mylifeco',
     tech: ['Figma', 'UI/UX', 'Pitch Deck', 'Flutter Handoff'],
-    image: '/images/projects/mylifeco-placeholder.jpg',
+    image: mylifecoCover,
     fallbackImage: '/images/projects/mylifeco-placeholder.svg',
   },
   {
@@ -32,11 +38,13 @@ const PROJECTS: ProjectDatum[] = [
     image: '/images/projects/suge-pos-placeholder.jpg',
     fallbackImage: '/images/projects/suge-pos-placeholder.svg',
     sourceUrl: 'https://github.com/dery45/POS-Laravel',
+    // Hidden for now (not deleted) — flip back to show it again.
+    hidden: true,
   },
   {
     key: 'indochain',
     tech: ['Blockchain', 'System Design', 'UX Flows'],
-    image: '/images/projects/indochain-placeholder.jpg',
+    image: indochainCover,
     fallbackImage: '/images/projects/indochain-placeholder.svg',
   },
 ];
@@ -50,7 +58,8 @@ export function Projects() {
   const { t, ta } = useTranslation();
   const reduced = useReducedMotion();
 
-  const entries: ProjectEntry[] = PROJECTS.map((p) => ({
+  const visibleProjects = PROJECTS.filter((p) => !p.hidden);
+  const entries: ProjectEntry[] = visibleProjects.map((p) => ({
     name: t(`projects.items.${p.key}.name`),
     role: t(`projects.items.${p.key}.role`),
     duration: t(`projects.items.${p.key}.duration`),
@@ -89,7 +98,7 @@ export function Projects() {
         {reduced && (
           <div className="mx-auto w-full max-w-6xl space-y-16 px-5 pb-16 sm:px-8 md:space-y-24 md:pb-24">
             {entries.map((entry, i) => (
-              <ProjectStoryBlock key={PROJECTS[i].key} entry={entry} index={i} />
+              <ProjectStoryBlock key={visibleProjects[i].key} entry={entry} index={i} />
             ))}
           </div>
         )}
@@ -102,7 +111,7 @@ export function Projects() {
           container that would break the sticky pin; `clip` clips without one. */}
       {!reduced && (
         <div className="relative w-full overflow-x-clip">
-          <ProjectStackCards entries={entries} entryKeys={PROJECTS.map((p) => p.key)} />
+          <ProjectStackCards entries={entries} entryKeys={visibleProjects.map((p) => p.key)} />
         </div>
       )}
     </>

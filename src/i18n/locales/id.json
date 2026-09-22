@@ -20,7 +20,7 @@
   },
   "motto": {
     "eyebrow": "Prinsip Saya",
-    "text": "Aku pegang teguh kata-kataku, karena itu jalan ninja-ku."
+    "text": "Aku pegang teguh kata-kataku, karena itulah jalan hidupku."
   },
   "experience": {
     "eyebrow": "Jejak Karier",
@@ -166,20 +166,161 @@
   "portfolio": {
     "eyebrow": "Arsip Visual",
     "title": "Galeri Portofolio",
-    "note": "Pratinjau sementara — karya final akan tampil di sini.",
     "viewPdf": "Lihat studi kasus (PDF)",
     "viewPortfolio": "Lihat berkas portofolio",
+    "viewDeck": "Lihat pitch deck",
+    "viewBehance": "Lihat di Behance",
+    "viewWebsite": "Kunjungi website",
     "filters": {
       "all": "Semua",
       "websites": "Website",
       "dashboards": "Dasbor",
       "uiux": "Mockup UI/UX",
-      "mobile": "Aplikasi Mobile",
+      "ai": "AI",
       "dataviz": "Visualisasi Data",
       "product": "Desain Produk"
     },
     "items": {
-      "websites": { "title": "Konsep Website 01", "alt": "Tempat screenshot website" },
+      "sugi": {
+        "title": "SUGI AI",
+        "alt": "Sampul SUGI Ecosystem",
+        "name": "SUGI AI",
+        "year": "2026",
+        "team": "BUTeam",
+        "description": [
+          "SUGI Ecosystem adalah ekosistem AI pertanian terintegrasi yang menghubungkan empat komponen utama dalam satu sistem intelligence engine. SUGI AI Core berfungsi sebagai asisten cerdas berbasis Hybrid RAG (BM25, Vector Search, dan Cross-Encoder) yang berjalan secara on-premise menggunakan Ollama untuk mendukung kedaulatan data dan mengurangi ketergantungan pada layanan AI berbayar.",
+          "SUGIDash merupakan dashboard analitik berbasis MERN Stack yang dirancang untuk tiga kelompok pengguna: Petani, Manajemen, dan Pemerintah. Platform ini menyediakan berbagai dataset ketahanan pangan, lifecycle tracking, serta pemantauan KPI dan finansial secara real-time. Sementara itu, SUGI PWA merupakan aplikasi mobile-first dan offline-first yang memungkinkan pencatatan aktivitas pertanian di area dengan konektivitas terbatas.",
+          "Keempat komponen tersebut terhubung melalui Daily Insight Engine yang mengolah interaksi dan data operasional menjadi insight terstruktur. Sistem ini dirancang untuk mendukung pemantauan kondisi pertanian, Early Warning System bagi pemerintah, serta membantu proses identifikasi dan mitigasi risiko bagi pemangku kepentingan."
+        ]
+      },
+      "uangku": {
+        "title": "Uangku",
+        "alt": "Sampul proyek Uangku",
+        "name": "Uangku",
+        "year": "2025",
+        "team": "BUTeam",
+        "description": [
+          "Uangku adalah asisten keuangan pribadi berbasis web yang membantu pengguna mengelola penghasilan, pengeluaran, anggaran, dana darurat, dan investasi dalam satu platform.",
+          "Didukung oleh Uangku Advisor AI, pengguna dapat memperoleh panduan keuangan secara real-time serta insight melalui analisis teknikal dan fundamental untuk membantu memahami pilihan investasi berdasarkan kondisi dan tujuan finansial mereka.",
+          "Uangku dikembangkan sebagai solusi untuk mengikuti BI-OJK Hackathon 2025. Meskipun belum berhasil lolos ke tahap berikutnya, proyek ini menjadi kesempatan untuk mengeksplorasi penerapan AI dalam pengelolaan keuangan pribadi dan pengambilan keputusan investasi."
+        ]
+      },
+      "politisimeter": {
+        "title": "Politisimeter",
+        "alt": "Sampul proyek Politisimeter",
+        "name": "Politisimeter",
+        "year": "2020",
+        "team": "PT. Kedata Indonesia Digital",
+        "description": [
+          "Politismeter adalah perusahaan konsultan politik di bawah PT Kedata Indonesia Digital yang memanfaatkan ilmu politik, ilmu sosial, ilmu komputer, dan data science untuk mengumpulkan serta menganalisis data guna menghasilkan insight mengenai isu-isu politik strategis.",
+          "Dalam project ini, saya berperan dalam mengembangkan website company profile Politismeter sebagai media untuk memperkenalkan layanan, kapabilitas, dan identitas perusahaan secara digital. Website dibangun menggunakan HTML, CSS, JavaScript, dan Bootstrap."
+        ]
+      },
+      "procastination": {
+        "title": "Procastination",
+        "alt": "Sampul proyek Procastination",
+        "name": "Procastination",
+        "year": "2022",
+        "team": "CV Bit Technology",
+        "description": [
+          "Procastination adalah podcast berbasis di Yogyakarta yang menjadi ruang terbuka untuk berbagi cerita, berdiskusi, dan bertukar perspektif mengenai berbagai topik.",
+          "Dalam project ini, saya berperan dalam membangun website company profile Procastination sebagai media digital untuk memperkenalkan podcast dan aktivitasnya. Website dikembangkan menggunakan HTML, CSS, JavaScript, dan Bootstrap."
+        ]
+      },
+      "indomabs": {
+        "title": "Indomabs",
+        "alt": "Sampul proyek Indomabs",
+        "name": "Indomabs",
+        "year": "2022",
+        "team": "CV Bit Technology",
+        "description": [
+          "Indomabs adalah perusahaan startup bioteknologi di Indonesia yang bergerak di bidang desain dan produksi antibodi kustom. Indomabs berfokus pada penyediaan layanan pengembangan yang terjangkau dengan hasil yang andal bagi para pelanggan.",
+          "Dalam project ini, saya berperan dalam membangun website company profile Indomabs sebagai media digital untuk memperkenalkan perusahaan, layanan, dan kapabilitasnya. Website dikembangkan menggunakan HTML, CSS, JavaScript, dan Bootstrap."
+        ]
+      },
+      "analisacafe": {
+        "title": "Analisa Cafe Kopi Solo",
+        "alt": "Sampul Analisa Cafe Kopi Solo",
+        "name": "Analisa Cafe Kopi Solo",
+        "year": "2020",
+        "team": "PT Kedata Indonesia Digital",
+        "description": [
+          "Project ini berfokus pada pengumpulan dan analisis data kompetitif dari lima kafe di Solo: Cafe Baca Canarisla sebagai klien utama PT Kedata Indonesia Digital, serta kompetitornya, yaitu Moju Moju, Serujuk Coffee, Solo Kopi, dan The Tower Space.",
+          "Data dikumpulkan melalui scraping dari Instagram, Google Maps Reviews, dan GoFood dengan periode observasi 1 Februari hingga 17 Juli 2020. Proses pengolahan dan analisis data dilakukan menggunakan R dan Python untuk mengidentifikasi insight terkait performa dan positioning masing-masing kafe."
+        ]
+      },
+      "tom": {
+        "title": "Analisa Social Media Tom MC Ifle",
+        "alt": "Sampul analisis Tom MC Ifle",
+        "name": "Analisa Social Media Tom MC Ifle",
+        "year": "2023",
+        "team": "CV Bit Technology",
+        "description": [
+          "Project ini berfokus pada analisis performa media sosial Tom MC Ifle melalui platform Instagram dan YouTube. Analisis mencakup berbagai metrik seperti jumlah likes, engagement, komentar, serta indikator interaksi lainnya untuk memahami performa konten dan respons audiens terhadap akun tersebut."
+        ]
+      },
+      "indochain": {
+        "title": "IndoChain",
+        "alt": "Sampul proyek IndoChain",
+        "name": "IndoChain",
+        "year": "2021",
+        "team": "CV Bit Technology",
+        "description": [
+          "Indochain adalah aplikasi terdesentralisasi berbasis blockchain yang dirancang untuk meningkatkan keamanan dan transparansi rantai pasok vaksin COVID-19 serta membantu mengurangi risiko peredaran vaksin palsu. Proyek ini dikembangkan pada periode 2020–2021 ketika kebutuhan terhadap sistem distribusi vaksin yang aman dan dapat ditelusuri semakin meningkat.",
+          "Indochain dikembangkan untuk mengikuti berbagai kompetisi hackathon dan program inovasi dengan berbagai pencapaian."
+        ],
+        "highlights": [
+          "1st Place — Indigo Hackathon Festival",
+          "1st Place — Hackdata Indosat Ooredoo Virtual Hackathon",
+          "Runner-up — Entrepreneur Empowerment DKI Jakarta / Jakbee",
+          "Top 25 — Innovation Challenge and Business Summit IKA ITS",
+          "Incubatee — DSLaunchpad 2.0"
+        ]
+      },
+      "langkahmu": {
+        "title": "Langkahmu",
+        "alt": "Sampul proyek Langkahmu",
+        "name": "Langkahmu",
+        "year": "2023",
+        "team": "WeKreativa",
+        "description": [
+          "Langkahmu adalah aplikasi mobile yang dirancang untuk membantu siswa, mahasiswa, dan pencari kerja merencanakan perjalanan pendidikan dan karier mereka.",
+          "Pengguna dapat mengeksplorasi berbagai bidang yang diminati, mulai dari informasi pekerjaan, pilihan sekolah atau universitas, hingga peluang dan jalur pengembangan karier. Langkahmu juga menyediakan tes kecocokan untuk membantu pengguna memahami bidang yang sesuai dengan minat dan potensi mereka.",
+          "Berdasarkan hasil tes, pengguna dapat memperoleh rekomendasi career roadmap serta pilihan pendidikan yang dapat ditempuh untuk mencapai tujuan karier mereka."
+        ]
+      },
+      "mylifeco": {
+        "title": "MyLifeCo",
+        "alt": "Sampul proyek MyLifeCo",
+        "name": "MyLifeCo",
+        "year": "2024",
+        "team": "BUTeam",
+        "description": [
+          "MyLifeCo adalah aplikasi dan fitur terintegrasi dalam Mobile JKN yang dirancang untuk membantu pengguna memantau asupan makanan dan membangun kebiasaan makan yang lebih sehat. Pengguna dapat memindai QR code atau barcode pada produk untuk memperoleh informasi nutrisi yang relevan dengan kebutuhan mereka. Dilengkapi dengan fitur edukasi dan chatbot, MyLifeCo membantu pengguna memahami pola konsumsi serta mendukung pengelolaan kondisi diabetes dan penyakit ginjal kronis (CKD)."
+        ]
+      },
+      "bkdcilacap": {
+        "title": "Computer Assessment Test - BKD Cilacap",
+        "alt": "Sampul platform asesmen BKD Cilacap",
+        "name": "Computer Assessment Test - BKD Cilacap",
+        "year": "2025",
+        "team": "testrek Asesmen",
+        "description": [
+          "CAT adalah aplikasi asesmen berbasis web yang dirancang untuk membantu Badan Kepegawaian Daerah Kabupaten Cilacap mengelola proses tes potensi secara lebih terstruktur dan efisien. Sistem ini mencakup pengelolaan paket tes, butir soal, penormaan dan skoring, data peserta, jadwal asesmen, serta pemantauan proses dan hasil asesmen.",
+          "Proyek ini dikembangkan menggunakan React.js, Express.js, Node.js, dan OracleDB, dengan tujuan menyediakan alur pengelolaan asesmen yang terpusat bagi administrator sekaligus memberikan pengalaman yang sederhana dan mudah digunakan bagi peserta tes."
+        ]
+      },
+      "bkd": {
+        "title": "Computer Assessment Test - BKD Jakarta",
+        "alt": "Sampul platform asesmen BKD Jakarta",
+        "name": "Computer Assessment Test - BKD Jakarta",
+        "year": "2025",
+        "team": "testrek Asesmen",
+        "description": [
+          "CAT adalah aplikasi asesmen berbasis web yang dirancang untuk membantu Badan Kepegawaian Daerah Provinsi DKI Jakarta mengelola proses tes potensi secara lebih terstruktur dan efisien. Sistem ini mencakup pengelolaan paket tes, butir soal, penormaan dan skoring, data peserta, jadwal asesmen, serta pemantauan proses dan hasil asesmen.",
+          "Proyek ini dikembangkan menggunakan React.js, Express.js, Node.js, dan OracleDB, dengan tujuan menyediakan alur pengelolaan asesmen yang terpusat bagi administrator sekaligus memberikan pengalaman yang sederhana dan mudah digunakan bagi peserta tes."
+        ]
+      },
       "jagad": {
         "title": "Jagad Agro Wonoboyo",
         "alt": "Sampul proyek Jagad Agro Wonoboyo",
@@ -191,7 +332,6 @@
           "Melalui penerapan teknologi smart farming, proyek ini bertujuan untuk meningkatkan efisiensi, produktivitas, dan keberlanjutan praktik pertanian di Desa Wonoboyo. Selain membantu petani dalam menjalankan aktivitas pertanian secara lebih efektif, inisiatif ini juga diharapkan dapat mendukung perkembangan ekonomi dan kesejahteraan masyarakat desa secara lebih luas."
         ]
       },
-      "dashboards": { "title": "Antarmuka Dasbor 01", "alt": "Tempat antarmuka dasbor" },
       "uiux": {
         "title": "CuanCraft — UX Case Study",
         "alt": "Sampul studi kasus UX CuanCraft",
@@ -215,9 +355,18 @@
           "Dalam proyek ini, saya terlibat dalam proses redesign UI/UX untuk meningkatkan pengalaman pengguna dalam mencari, melihat, dan mengelola informasi properti. Redesign mencakup website utama, versi mobile web, serta admin dashboard untuk mendukung kebutuhan pengguna dan pengelola platform."
         ]
       },
-      "mobile": { "title": "Antarmuka Aplikasi Mobile 01", "alt": "Tempat antarmuka aplikasi mobile" },
-      "dataviz": { "title": "Visualisasi Data 01", "alt": "Tempat karya visualisasi data" },
-      "product": { "title": "Eksplorasi Desain Produk 01", "alt": "Tempat eksplorasi desain produk" }
+      "jaghut": {
+        "title": "JagHut",
+        "alt": "Sampul proyek JagHut",
+        "name": "JagHut",
+        "year": "2026",
+        "team": "BUTeam",
+        "description": [
+          "JagHut adalah platform environmental intelligence berbasis OSINT yang memadukan data, teknologi AI, dan kontribusi masyarakat untuk membantu memverifikasi klaim keberlanjutan perusahaan secara independen.",
+          "Dengan mengintegrasikan data Forest IQ, analisis AI secara real-time, dan laporan langsung dari masyarakat, JagHut menghasilkan insight mengenai isu lingkungan yang lebih transparan, berbasis data, dan dapat ditelusuri.",
+          "JagHut dikembangkan sebagai solusi untuk mengikuti kompetisi Hackathon Peduli Hutan yang diselenggarakan oleh Telkomsel."
+        ]
+      }
     },
     "lightbox": { "close": "Tutup" }
   },
@@ -226,7 +375,6 @@
     "title": "Kontak",
     "intro": "Punya proyek, peran, atau kolaborasi? Kotak masuk saya terbuka.",
     "socialTitle": "Temukan saya di",
-    "socialNote": "Tautan profil segera hadir — sementara ini masih placeholder hingga URL asli tersedia.",
     "form": {
       "name": "Nama",
       "namePlaceholder": "Nama lengkap Anda",
