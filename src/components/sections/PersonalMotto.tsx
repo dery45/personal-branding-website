@@ -23,17 +23,23 @@ export function PersonalMotto() {
     target: sectionRef,
     offset: ['start end', 'end start'],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ['-12%', '12%']);
+  const bgY = useTransform(scrollYProgress, [0, 1], [-60, 60]);
 
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: reduced ? 0 : 0.09, delayChildren: 0.1 } },
+    // Keep the total cascade ~1.2s even for long paragraphs.
+    show: {
+      transition: {
+        staggerChildren: reduced ? 0 : Math.min(0.09, 1.2 / Math.max(words.length, 1)),
+        delayChildren: 0.1,
+      },
+    },
   };
   const word = {
-    hidden: reduced ? { opacity: 0 } : { opacity: 0, y: 18, rotateX: -35 },
+    hidden: reduced ? { opacity: 0 } : { opacity: 0, y: 18 },
     show: reduced
       ? { opacity: 1 }
-      : { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.45, ease: 'easeOut' as const } },
+      : { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' as const } },
   };
 
   return (
@@ -45,12 +51,16 @@ export function PersonalMotto() {
         <>
           {/* Clipping frame: keeps the scaled/translated photo from ever causing overflow */}
           <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-            <motion.div style={reduced ? undefined : { y: bgY }} className="absolute inset-0">
+            <motion.div
+              style={reduced ? undefined : { y: bgY }}
+              className="absolute inset-0 will-change-transform [transform:translateZ(0)]"
+            >
               <img
                 src={parallaxBg}
                 alt=""
                 loading="lazy"
-                className="h-full w-full scale-[1.2] object-cover"
+                decoding="async"
+                className="h-full w-full scale-[1.1] object-cover"
               />
             </motion.div>
           </div>
@@ -77,7 +87,7 @@ export function PersonalMotto() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-100px' }}
-            className="font-display max-w-4xl text-display-lg font-extrabold leading-tight text-[var(--motto-ink)]"
+            className="max-w-3xl text-lg leading-relaxed text-text-primary md:text-xl"
         >
           <span className="sr-only">{text}</span>
           {words.map((w, i) => (

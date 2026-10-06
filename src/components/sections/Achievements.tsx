@@ -9,10 +9,11 @@ interface AchievementDatum {
   category: AchievementCategory;
 }
 
-// All 7 recognitions in reverse-chronological order, one unified grid.
+// All 8 recognitions in reverse-chronological order, one unified grid.
 // Category stays on each card via icon + label (single blue accent site-wide); DSLaunchpad remains
 // participation, never a "win".
 const ACHIEVEMENTS: AchievementDatum[] = [
+  { key: 'biPidi', category: 'ranking' },
   { key: 'healthkathon', category: 'placement' },
   { key: 'indigo', category: 'placement' },
   { key: 'hackdata', category: 'placement' },

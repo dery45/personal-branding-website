@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -9,7 +9,7 @@
       content="Dery Andrian Pratama — IT Project Manager & Technical Product Designer based in Yogyakarta, Indonesia. Explore experience, selected projects, achievements, and portfolio."
     />
     <meta name="author" content="Dery Andrian Pratama" />
-    <meta name="theme-color" content="#080A0D" />
+    <meta name="theme-color" content="#F5F5F0" />
     <title>Dery Andrian Pratama — IT Project Manager & Technical Product Designer</title>
     <!-- Open Graph (og:image is a placeholder until a real portrait/cover is supplied) -->
     <meta property="og:type" content="website" />
@@ -30,11 +30,11 @@
       (function () {
         try {
           var stored = localStorage.getItem('dery-theme');
-          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'light';
           document.documentElement.setAttribute('data-theme', theme);
           document.documentElement.style.colorScheme = theme;
         } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.setAttribute('data-theme', 'light');
         }
         try {
           var lang = localStorage.getItem('dery-lang');

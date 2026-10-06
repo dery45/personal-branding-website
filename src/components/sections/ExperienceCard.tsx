@@ -66,9 +66,9 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
             <p className="mt-4 line-clamp-3 text-body text-text-secondary">{entry.summary}</p>
           ) : (
             <motion.ul
-              initial={reduced ? { opacity: 0 } : { opacity: 0, height: 0 }}
-              animate={reduced ? { opacity: 1 } : { opacity: 1, height: 'auto' }}
-              transition={{ duration: reduced ? 0.05 : 0.35, ease: 'easeOut' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: reduced ? 0.05 : 0.25, ease: 'easeOut' }}
               className="mt-4 space-y-2.5 overflow-hidden"
             >
               {entry.bullets.map((b, i) => (

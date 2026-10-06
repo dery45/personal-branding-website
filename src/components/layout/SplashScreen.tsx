@@ -43,8 +43,8 @@ export function SplashScreen() {
           className="fixed inset-0 z-[70] flex flex-col items-center justify-center gap-3 bg-bg-primary"
         >
           <motion.p
-            initial={reduced ? { opacity: 0 } : { opacity: 0, y: 14, letterSpacing: '0.6em' }}
-            animate={reduced ? { opacity: 1 } : { opacity: 1, y: 0, letterSpacing: '0.35em' }}
+            initial={reduced ? { opacity: 0 } : { opacity: 0, y: 14 }}
+            animate={reduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: reduced ? 0.15 : 0.7, ease: 'easeOut' }}
             className="font-display text-display-md font-extrabold text-text-primary"
           >

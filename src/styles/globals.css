@@ -95,10 +95,21 @@ body {
   color: var(--text-primary);
   font-family: 'Source Sans Pro', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  /* clip (not hidden): hidden creates a scroll container that breaks
+     position: sticky pins and can trap wheel/touch mid-page. */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
-/* Subtle grain/noise overlay on bg */
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Subtle grain/noise overlay on bg — static, never animates. Disabled on
+   low-end / reduced-motion to keep the compositor idle. */
 body::before {
   content: '';
   position: fixed;
@@ -107,6 +118,21 @@ body::before {
   pointer-events: none;
   opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce), (max-width: 768px) {
+  body::before {
+    display: none;
+  }
+}
+
+/* On small screens backdrop-blur over full-width fixed surfaces is the
+   single biggest scroll-jank source — keep the frosted look with less radius. */
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
 
 #root {

@@ -19,8 +19,8 @@
     "portraitAlt": "Foto melingkar Dery Andrian Pratama"
   },
   "motto": {
-    "eyebrow": "Prinsip Saya",
-    "text": "Aku pegang teguh kata-kataku, karena itulah jalan hidupku."
+    "eyebrow": "Tentang Saya",
+    "text": "Technical Product Designer dengan pengalaman menjembatani kebutuhan bisnis, arsitektur UX, desain sistem, dan pengembangan perangkat lunak. Terampil menerjemahkan alur kerja yang kompleks menjadi produk digital yang intuitif melalui user flows, wireframes, PRD/TRD, arsitektur sistem, dan serah terima pengembangan. Latar belakang teknis yang praktis di React, Node.js, Laravel, SQL, serta sistem data/AI, dengan pengalaman mengoordinasikan proyek perangkat lunak, memimpin tim produk, dan menghadirkan solusi di bidang pertanian, kesehatan, pendidikan, keuangan, dan ritel. Diakui melalui berbagai kompetisi hackathon dan inovasi nasional, termasuk Juara 1 Indigo Hackathon Festival dan Juara 2 BPJS Healthkathon di antara 1.100+ tim."
   },
   "experience": {
     "eyebrow": "Jejak Karier",
@@ -75,7 +75,21 @@
     "eyebrow": "Karya Pilihan",
     "title": "Proyek Pilihan",
     "viewSource": "Lihat source",
+    "viewWebsite": "Kunjungi website",
     "items": {
+      "sugiEcosystem": {
+        "name": "SUGI Ecosystem — Platform AI Pertanian",
+        "role": "Team Lead — Arsitektur LLM/AI",
+        "duration": "2026",
+        "description": "Memimpin tim 4 orang merancang arsitektur LLM/AI untuk platform pertanian. Mengintegrasikan SUGI AI berbasis Llama, mengembangkan dashboard/landing page, dan menyiapkan pitch untuk stakeholder. Meraih Top 40 Kategori Profesional di BI x PIDI Hackathon 2026.",
+        "features": [
+          "Perancangan arsitektur LLM/AI untuk platform",
+          "Integrasi SUGI AI berbasis Llama",
+          "Pengembangan dashboard dan landing page",
+          "Top 40 Kategori Profesional — BI x PIDI Hackathon 2026"
+        ],
+        "imageAlt": "Sampul platform AI pertanian SUGI Ecosystem"
+      },
       "jagadAgro": {
         "name": "Jagad Agro Wonoboyo",
         "role": "Team Lead & Full-Stack Developer",
@@ -154,6 +168,7 @@
       "incubation": "Inkubasi"
     },
     "items": {
+      "biPidi": { "title": "Top 80 · Top 40 Profesional", "organizer": "Bank Indonesia x PIDI Hackathon", "year": "2026" },
       "healthkathon": { "title": "2nd Place", "organizer": "BPJS Healthkathon", "year": "2024" },
       "indigo": { "title": "1st Place", "organizer": "Indigo Hackathon Festival", "year": "2021" },
       "hackdata": { "title": "1st Place", "organizer": "Hackdata Indosat Ooredoo Virtual Hackathon", "year": "2020" },

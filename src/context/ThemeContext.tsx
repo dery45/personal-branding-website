@@ -21,7 +21,7 @@ function readStoredTheme(): Theme {
   // Respect inline script value if already applied
   const attr = document.documentElement.getAttribute('data-theme');
   if (attr === 'light' || attr === 'dark') return attr;
-  return 'dark';
+  return 'light';
 }
 
 function applyTheme(theme: Theme) {
@@ -33,7 +33,7 @@ function applyTheme(theme: Theme) {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() =>
-    typeof document !== 'undefined' ? readStoredTheme() : 'dark',
+    typeof document !== 'undefined' ? readStoredTheme() : 'light',
   );
 
   useEffect(() => {

@@ -63,7 +63,7 @@ function JourneyCard({ entry, index, trackX, cx, w, vw }: JourneyCardProps) {
   return (
     <motion.div
       style={{ opacity, scale }}
-      className="max-h-[82vh] w-[80vw] shrink-0 overflow-y-auto sm:w-[62vw] lg:w-[40vw]"
+      className="max-h-[82vh] w-[80vw] shrink-0 overflow-y-auto will-change-transform sm:w-[62vw] lg:w-[40vw]"
     >
       <ExperienceCard entry={entry} index={index} />
     </motion.div>
@@ -184,12 +184,14 @@ export function Experience() {
       const frac = travel !== 0 ? Math.min(1, Math.max(0, (m.start - targetX) / travel)) : 0;
       const p = TRAVEL_FROM + (TRAVEL_TO - TRAVEL_FROM) * frac;
       const top = outer.getBoundingClientRect().top + window.scrollY;
+      // 'auto' (not 'smooth'): a smooth programmatic scroll keeps animating
+      // while the user wheels, fighting them and feeling "stuck".
       window.scrollTo({
         top: top + p * (outer.offsetHeight - window.innerHeight),
-        behavior: reduced ? 'auto' : 'smooth',
+        behavior: 'auto',
       });
     },
-    [reduced],
+    [],
   );
 
   const header = (
@@ -224,7 +226,7 @@ export function Experience() {
             onClick={() => jumpToCard(i)}
             aria-label={entry.org}
             aria-current={active === i}
-            className={`h-4 w-4 shrink-0 rounded-full ring-4 ring-bg-primary transition-all duration-300 ${
+            className={`h-4 w-4 shrink-0 rounded-full ring-4 ring-bg-primary transition-[transform,opacity,box-shadow] duration-300 ${
               NODE_ACCENTS[i % NODE_ACCENTS.length]
             } ${active === i ? `scale-125 ${NODE_GLOWS[i % NODE_GLOWS.length]}` : 'opacity-50 hover:opacity-100'}`}
           />
@@ -244,10 +246,10 @@ export function Experience() {
           ))}
         </div>
       ) : (
-        <div ref={outerRef} className="relative" style={{ height: `${(entries.length + 1) * 100}vh` }}>
+        <div ref={outerRef} className="relative" style={{ height: `${entries.length * 100}vh` }}>
           <div className="sticky top-0 flex h-screen flex-col justify-center gap-8 overflow-hidden">
             <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">{track}</div>
-            <motion.div ref={trackRef} style={{ x }} className="relative flex items-stretch gap-5 px-[8vw]">
+            <motion.div ref={trackRef} style={{ x }} className="relative flex items-stretch gap-5 px-[8vw] will-change-transform [transform:translateZ(0)]">
               {entries.map((entry, i) => (
                 <JourneyCard
                   key={ROLE_KEYS[i]}

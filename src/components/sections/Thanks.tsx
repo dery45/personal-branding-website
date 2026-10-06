@@ -27,8 +27,8 @@ export function Thanks() {
 
         <motion.h2
           id="thanks-heading"
-          initial={reduced ? { opacity: 0 } : { opacity: 0, y: 32, skewX: -4 }}
-          whileInView={{ opacity: 1, y: 0, skewX: 0 }}
+          initial={reduced ? { opacity: 0 } : { opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: reduced ? 0.05 : 0.65, ease: 'easeOut' }}
           className="font-display mt-5 max-w-4xl text-display-xl font-black uppercase leading-[0.95] text-text-primary"

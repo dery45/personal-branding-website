@@ -7,6 +7,9 @@ import { ProjectStackCards } from './ProjectStackCards';
 import jagoCover from '../../assets/images/porfolio cover/JAGO-COVER.png';
 import mylifecoCover from '../../assets/images/porfolio cover/MyLifeCo-Cover.png';
 import indochainCover from '../../assets/images/porfolio cover/indochain-cover.png';
+import sugiCover from '../../assets/images/porfolio cover/SUGI-Cover.png';
+
+const SUGI_WEBSITE_URL = 'https://sugi-ecosystem.netlify.app/';
 
 interface ProjectDatum {
   key: string;
@@ -14,11 +17,19 @@ interface ProjectDatum {
   image: string;
   fallbackImage: string;
   sourceUrl?: string;
+  websiteUrl?: string;
   /** hidden entries stay in the data (not deleted) but render nothing */
   hidden?: boolean;
 }
 
 const PROJECTS: ProjectDatum[] = [
+  {
+    key: 'sugiEcosystem',
+    tech: ['LLM/AI Architecture', 'Llama', 'MERN', 'Team Leadership'],
+    image: sugiCover,
+    fallbackImage: '/images/projects/sugi-placeholder.svg',
+    websiteUrl: SUGI_WEBSITE_URL,
+  },
   {
     key: 'jagadAgro',
     tech: ['MERN', 'Figma', 'PRD', 'Team Leadership'],
@@ -70,6 +81,7 @@ export function Projects() {
     image: p.image,
     fallbackImage: p.fallbackImage,
     sourceUrl: p.sourceUrl,
+    websiteUrl: p.websiteUrl,
   }));
 
   return (

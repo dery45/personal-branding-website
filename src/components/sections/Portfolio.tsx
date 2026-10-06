@@ -40,7 +40,7 @@ const UANGKU_DRIVE_URL =
 const POLITISIMETER_URL = 'https://politisimeter.netlify.app/';
 const PROCASTINATION_URL = 'https://procastination.netlify.app/';
 const INDOMABS_URL = 'https://indomaps.netlify.app/';
-const SUGI_URL = 'https://sugiecosystem.cloud/';
+const SUGI_URL = 'https://sugi-ecosystem.netlify.app/';
 const ANALISA_CAFE_DRIVE_URL =
   'https://drive.google.com/file/d/1EwFMfEx1iOazJFAqnlWrwmlIQk2Epdg0/view?usp=sharing';
 const TOM_DRIVE_URL =
@@ -152,7 +152,7 @@ export function Portfolio() {
               type="button"
               onClick={() => setFilter(c)}
               aria-pressed={active}
-              className={`rounded-full border px-4 py-2 text-caption font-bold uppercase tracking-widest transition-all ${
+              className={`rounded-full border px-4 py-2 text-caption font-bold uppercase tracking-widest transition-[colors,border-color,transform] duration-200 ${
                 active
                   ? 'border-transparent bg-neon-blue text-[var(--on-neon)]'
                   : 'border-[var(--glass-border)] bg-[var(--glass-bg)] text-text-secondary hover:border-neon-blue hover:text-text-primary'

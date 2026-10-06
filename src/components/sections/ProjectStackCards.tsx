@@ -43,10 +43,12 @@ function ProjectStackCardItem({ entry, index, total, travel }: ProjectStackCardI
       style={{ zIndex: index + 1 }}
     >
       <motion.div
-        className="relative mx-auto max-h-[92svh] w-full max-w-6xl origin-center overflow-y-auto"
+        className="relative mx-auto max-h-[92svh] w-full max-w-6xl origin-center overflow-hidden will-change-transform [transform:translateZ(0)] [backface-visibility:hidden]"
         style={{ x, y, opacity, scale }}
       >
-        <ProjectStoryBlock entry={entry} index={index} animateOnView={false} />
+        <div className="max-h-[92svh] overflow-y-auto">
+          <ProjectStoryBlock entry={entry} index={index} animateOnView={false} />
+        </div>
       </motion.div>
     </div>
   );

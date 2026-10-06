@@ -17,6 +17,8 @@ export interface ProjectEntry {
   fallbackImage: string;
   imageAlt: string;
   sourceUrl?: string;
+  /** optional live-site link — renders a "Visit website" action when present */
+  websiteUrl?: string;
 }
 
 interface ProjectStoryBlockProps {
@@ -30,7 +32,8 @@ interface ProjectStoryBlockProps {
 /**
  * ProjectStoryBlock — editorial story block, image-vs-text alternating per project.
  * Props: entry { name, role, duration, description, features[], tech[], image, fallbackImage, imageAlt, sourceUrl? }.
- * "View source" renders ONLY when sourceUrl exists — otherwise omitted entirely.
+ * "View source" renders ONLY when sourceUrl exists, "Visit website" ONLY when
+ * websiteUrl exists — otherwise omitted entirely.
  * The whole block sits in one opaque card so stacked cards never show through each other.
  */
 export function ProjectStoryBlock({ entry, index, animateOnView = true }: ProjectStoryBlockProps) {
@@ -63,6 +66,7 @@ export function ProjectStoryBlock({ entry, index, animateOnView = true }: Projec
               width={800}
               height={500}
               loading="lazy"
+              decoding="async"
               className="absolute inset-0 h-full w-full object-cover"
               onError={(e) => {
                 const img = e.target as HTMLImageElement;
@@ -116,17 +120,30 @@ export function ProjectStoryBlock({ entry, index, animateOnView = true }: Projec
             </li>
           ))}
         </ul>
-        {entry.sourceUrl && (
-          <div className="mt-6">
-            <Button
-              href={entry.sourceUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              variant="glass"
-            >
-              <ExternalLink size={16} aria-hidden="true" />
-              {t('projects.viewSource')}
-            </Button>
+        {(entry.sourceUrl || entry.websiteUrl) && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {entry.sourceUrl && (
+              <Button
+                href={entry.sourceUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                variant="glass"
+              >
+                <ExternalLink size={16} aria-hidden="true" />
+                {t('projects.viewSource')}
+              </Button>
+            )}
+            {entry.websiteUrl && (
+              <Button
+                href={entry.websiteUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                variant="solid-neon"
+              >
+                <ExternalLink size={16} aria-hidden="true" />
+                {t('projects.viewWebsite')}
+              </Button>
+            )}
           </div>
         )}
       </div>

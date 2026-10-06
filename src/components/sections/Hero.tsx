@@ -50,7 +50,7 @@ export function Hero() {
             }
             animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
             transition={{ duration: reduced ? 0.05 : 0.7, delay: reduced ? 0 : 0.35, ease: 'easeOut' }}
-            className="absolute left-1/2 top-1/2 z-10"
+            className="absolute left-1/2 top-1/2 z-10 will-change-transform"
           >
             <img
               src={portraitSrc}
@@ -59,6 +59,7 @@ export function Hero() {
               height={1286}
               loading="eager"
               fetchPriority="high"
+              decoding="async"
               className="size-[clamp(110px,24vw,260px)] rounded-full border-2 border-neon-blue/70 object-cover shadow-[0_0_48px_var(--glow-blue)]"
             />
           </motion.div>

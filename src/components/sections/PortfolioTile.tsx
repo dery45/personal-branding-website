@@ -54,7 +54,7 @@ export function PortfolioTile({ entry, index, onOpen }: PortfolioTileProps) {
         type="button"
         onClick={() => onOpen(index)}
         aria-haspopup="dialog"
-        className="glass-glow-blue group relative block w-full overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--bg-secondary)] text-left shadow-[0_8px_32px_var(--glass-shadow)] transition-all"
+        className="glass-glow-blue group relative block w-full overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--bg-secondary)] text-left shadow-[0_8px_32px_var(--glass-shadow)] transition-[transform,border-color,box-shadow] duration-200"
       >
         <span className="block aspect-[4/3] w-full bg-bg-secondary">
           <img
@@ -63,7 +63,8 @@ export function PortfolioTile({ entry, index, onOpen }: PortfolioTileProps) {
             width={600}
             height={450}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-300 will-change-transform group-hover:scale-[1.03]"
             onError={(e) => {
               const img = e.target as HTMLImageElement;
               if (!img.dataset.fbk && entry.fallbackImage) {

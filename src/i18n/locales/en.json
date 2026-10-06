@@ -19,8 +19,8 @@
     "portraitAlt": "Circular portrait of Dery Andrian Pratama"
   },
   "motto": {
-    "eyebrow": "My Principle",
-    "text": "I stand by what I say, because that's my way of life."
+    "eyebrow": "About Me",
+    "text": "Technical Product Designer with experience bridging business requirements, UX architecture, system design, and software development. Skilled in translating complex workflows into intuitive digital products through user flows, wireframes, PRD/TRD, system architecture, and development handoff. Hands-on technical background across React, Node.js, Laravel, SQL, and data/AI systems, with experience coordinating software projects, leading product teams, and delivering solutions across agriculture, healthcare, education, finance, and retail. Recognized through multiple national hackathon and innovation competitions, including 1st Place at Indigo Hackathon Festival and 2nd Place at BPJS Healthkathon among 1,100+ teams."
   },
   "experience": {
     "eyebrow": "Career Path",
@@ -75,7 +75,21 @@
     "eyebrow": "Selected Work",
     "title": "Selected Projects",
     "viewSource": "View source",
+    "viewWebsite": "Visit website",
     "items": {
+      "sugiEcosystem": {
+        "name": "SUGI Ecosystem — Agricultural AI Platform",
+        "role": "Team Lead — LLM/AI Architecture",
+        "duration": "2026",
+        "description": "Led a 4-person team to design the LLM/AI architecture for an agricultural platform. Integrated Llama-based SUGI AI, developed the dashboard/landing page, and prepared stakeholder pitches. Achieved Top 40 Professional Category at BI x PIDI Hackathon 2026.",
+        "features": [
+          "LLM/AI architecture design for the platform",
+          "Llama-based SUGI AI integration",
+          "Dashboard and landing page development",
+          "Top 40 Professional Category — BI x PIDI Hackathon 2026"
+        ],
+        "imageAlt": "SUGI Ecosystem agricultural AI platform cover"
+      },
       "jagadAgro": {
         "name": "Jagad Agro Wonoboyo",
         "role": "Team Lead & Full-Stack Developer",
@@ -154,6 +168,7 @@
       "incubation": "Incubation"
     },
     "items": {
+      "biPidi": { "title": "Top 80 · Top 40 Professional", "organizer": "Bank Indonesia x PIDI Hackathon", "year": "2026" },
       "healthkathon": { "title": "2nd Place", "organizer": "BPJS Healthkathon", "year": "2024" },
       "indigo": { "title": "1st Place", "organizer": "Indigo Hackathon Festival", "year": "2021" },
       "hackdata": { "title": "1st Place", "organizer": "Hackdata Indosat Ooredoo Virtual Hackathon", "year": "2020" },
