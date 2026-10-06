@@ -21,17 +21,12 @@ interface ExperienceCardProps {
 /**
  * ExperienceCard — one timeline card.
  * Props: entry { org, role, dateRange, summary, bullets[] }, index.
- * Collapsed to summary on mobile by default (expanded on desktop); toggle is keyboard operable.
+ * Collapsed to summary by default; toggle is keyboard operable.
  */
 export function ExperienceCard({ entry, index }: ExperienceCardProps) {
   const { t } = useTranslation();
   const reduced = useReducedMotion();
-  const [expanded, setExpanded] = useState<boolean>(() =>
-    typeof window !== 'undefined' &&
-    typeof window.matchMedia !== 'undefined'
-      ? window.matchMedia('(min-width: 768px)').matches
-      : false,
-  );
+  const [expanded, setExpanded] = useState<boolean>(false);
   const listId = useId();
 
   return (
